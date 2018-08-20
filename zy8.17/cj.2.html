@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #all {
+            width: 310px;
+            height: 310px;
+            position: relative;
+            margin: 30px auto;
+        }
+
+        #oUl {
+            width: 310px;
+            height: 310px;
+        }
+
+        #oUl li,
+        #oUl a {
+            width: 100px;
+            height: 100px;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+            color: dimgrey;
+            position: relative;
+        }
+
+
+        #oUl a:hover {
+            color: rgb(21, 255, 0);
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #oUl li img,
+        #oUl a img {
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+
+        #oUl .td {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background: rgba(255, 0, 0, .6);
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        #oUl .l .td {
+            display: block;
+            transition: 1s;
+        }
+
+        #hjx {
+            width: 310px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .6);
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <ul id="oUl">
+            <li><img src="images/nn (7).jpg" /><div class="td"></div>
+            </li>
+            <li><img src="images/nn (8).jpg" /><div class="td"></div>
+            </li>
+            <li><img src="images/nn (9).jpg" /><div class="td"></div>
+            </li>
+            <li><img src="images/nn (1).jpg" /><div class="td"></div>
+            </li>
+            <a><img src="images/nn (2).jpg" />
+            </a>
+            <li><img src="images/nn (3).jpg" /><div class="td"></div>
+            </li>
+            <li><img src="images/nn (6).jpg" /><div class="td"></div>
+            </li>
+            <li><img src="images/nn (5).jpg" /><div class="td"></div>
+            </li>
+            <li><img src="images/nn (4).jpg" /><div class="td"></div>
+            </li>
+        </ul>
+
+        <div id="hjx">
+        </div>
+    </div>
+
+    <script>
+        var oAll = document.getElementById('all'),
+            oLi = document.getElementsByTagName('li'),
+            oA = document.getElementsByTagName('a')[0],
+            oHjx = document.getElementById('hjx'),
+            timer = null,
+            bool = true,//按钮是否可点
+            order = [0, 1, 2, 4, 7, 6, 5, 3],
+            ord = ['一等奖', '二等奖', '三等奖', '四等奖', '五等奖', '六等奖', '七等奖', '八等奖']
+            n = 0;  //存储随机数           
+
+
+        function random() {
+            return parseInt(Math.random() * 8);//随机产生一个数组
+        }
+        oA.onclick = function () {
+            if (bool) {
+                oA.style.transform='scale(0.8)';
+                oHjx.style.display = 'none';
+                n = random();
+                show(n);
+                bool=false;
+            }
+
+        }
+
+        function show(num) {
+            var i = 0;//计数
+            var t = 60;//秒数
+            timer = setTimeout(zq, t);
+
+            function zq() {
+                for (var j = 0; j < oLi.length; j++) {
+                    oLi[j].className = '';
+                }
+                var wz = order[i % oLi.length];
+                oLi[wz].className = 'l';
+                i++;
+                if (i < 70) {
+                    timer = setTimeout(zq, t);//t=60不变
+                } else if (i >= 70 && i < 80 + num) {
+                    t += (i - 70) * 5;//t改变  秒数增加
+                    timer = setTimeout(zq, t);
+                }
+                if (i >= 80 + num) {
+                    oHjx.innerHTML = '恭喜你获得:' + ord[wz];
+                    oHjx.style.display = 'block';
+                    oA.style.transform='scale(1)';
+                    setTimeout(function(){
+                        oLi[wz].
+                    },2000)
+                    bool=true;
+                    clearTimeout(timer);
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
