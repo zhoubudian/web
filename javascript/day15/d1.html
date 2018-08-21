@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//1.标量(基本变量)  名不改  值根据需求改变
+		var num=10;
+		var str="asdfg";
+		var bool=true;
+		//undefined;标量没定义
+
+
+		//特殊变量  arr.constructor; 
+		//constructor:构造(构造器)
+		var arr=[3,6,9];
+		//对象 {key:value,...,key:value};
+		//key:键 value:值   键值对
+		var obj={uName:'Alice',password:3389,age:20};
+        //null;特殊变量赋值空值.
+
+        //调用对象中的某个元素 两种方法
+        obj['uName'];
+        obj.uName;
+
+        //遍历  for in 循环
+        /*
+            for(变量 in 数组/对象){
+	               代码块
+            }
+        */
+        for(var item in obj){
+              console.log(item+':'+obj[item]);
+        }
+	</script>
+</body>
+</html>

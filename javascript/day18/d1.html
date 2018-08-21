@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>递归</title>
+</head>
+
+<body>
+	<script>
+		function dg(num) {
+			document.write(num + '<br />');
+			if (num > 0) {
+				//document.write(num + '<br />')
+				dg(num-1);
+			}
+		}
+		dg(8);
+	</script>
+</body>
+
+</html>

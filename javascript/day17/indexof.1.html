@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script>
+
+	function test(){
+		if(navigator.userAgent.indexOf('iphone')!=-1){
+             location.href='https://www.baidu.com/';
+             //手机端
+             
+	   }else{
+	   	     location.href="http://www.qq.com/";
+	   	     //电脑端
+	   	     
+	   }
+	}
+	   //根据客户端设备类型来传递网页链接(pc/mobile)
+	   	test();
+	</script>
+</body>
+</html>

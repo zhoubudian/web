@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      h1{
+      	background: #0ff;
+      }
+	</style>
+</head>
+<body>
+	
+    <h1 id="show">看看</h1>
+
+	<script>
+		var oShow = document.getElementById("show");
+		var num = 0;
+		var timer=null;//空对象
+
+        timer=setInterval(
+           function(){
+           	num++;
+           	 oShow.innerHTML=num;
+           },1000)
+        
+        oShow.onmouseover=function(){
+        	clearInterval(timer);
+        }
+		
+		oShow.onmouseout=function(){
+			timer=setInterval(
+           function(){
+           	 num++;
+           	 oShow.innerHTML=num;
+           },1000)
+		}
+        
+
+	</script>
+</body>
+</html>

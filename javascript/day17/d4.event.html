@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+
+<body>
+
+	<button>前进</button>
+	<button>后退</button>
+
+	<script>
+		var oBtn = document.getElementsByTagName("button");
+		var s = "http://www.qq.com/";
+		//事件三要素
+		/*
+          事件event
+          三要素:事件源(标签) ,事件对象(键盘/鼠标) ,事件处理方法(发生的具体的事)
+
+		*/
+		oBtn[0].onclick = function () {
+			/*location.href=s;*/
+			history.forward();
+		}
+		oBtn[1].onclick = function () {
+			/*location.href=s;*/
+			history.back();
+		}
+
+	
+		/*
+		 file:///D:/webstrom/start/javascript/day17/location.html
+         file:///D:/webstrom/start/javascript/day17/d4.html
+         file:///D:/webstrom/start/javascript/day17/navigtor.html
+		*/
+	</script>
+</body>
+
+</html>

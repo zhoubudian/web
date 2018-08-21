@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>递归小例子</title>
+    <style>
+        li {
+            list-style: none;
+            font-size: 20px;
+        }
+
+        strong {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>抽奖: <strong id="name">豪华大奖</strong> </li>
+        <li><input type="button" value="点击抽奖" id="btn"></li>
+        <!-- disabled  禁用 -->
+    </ul>
+
+    <script>
+        var oName = document.getElementById("name");
+        var oBtn = document.getElementById("btn");
+        var jp = ['一万', '两万', '三万', '四万', '五万', '六万', '七万'];
+        var i = 0;//计数器
+
+        oBtn.onclick = function () {
+            oBtn.disabled = true;
+            view();
+        }
+
+        function view() {
+            i++;
+            //console.log(i);
+            if (i < 20) {//递归条件
+                setTimeout(view, 100);
+            } else {
+                i = 0;
+                oBtn.disabled = false;
+            }
+            //随机下标
+            //递归的返回段
+            var rand = parseInt(Math.random() * jp.length);
+            oName.innerHTML = jp[rand];
+        }
+    </script>
+</body>
+
+</html>

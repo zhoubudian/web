@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 310px;
+            height: 310px;
+            margin: 30px auto;
+            position: relative
+        }
+
+        #oUl {
+            width: 310px;
+            height: 310px;
+            list-style: none;
+        }
+
+        #oUl li,
+        #oUl a {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #565656;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+            position: relative;
+        }
+
+        #oUl li img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #oUl li .mask {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: rgba(255,0,0,.8);
+            display: none;
+        }
+
+        #oUl a:hover {
+            cursor: pointer;
+            color: orange;
+            font-size: 18px;
+        }
+
+        #oUl .active .mask {
+            display: block;
+        }
+
+        #page {
+            line-height: 100px;
+            color: #9a9a9a;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 310px;
+            height: 100px;
+            /* margin-left: -150px; */
+            display: none;
+            background: rgba(0,0,0,.7);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="oUl">
+            <li><img src="images/n1.png" /><div class="mask"></div>
+            </li>
+            <li><img src="images/n2.png" /><div class="mask"></div>
+            </li>
+            <li><img src="images/n3.png" /><div class="mask"></div>
+            </li>
+            <li><img src="images/n4.png" /><div class="mask"></div>
+            </li>
+            <a>开始</a>
+            <li><img src="images/n5.png" /><div class="mask"></div>
+            </li>
+            <li><img src="images/n6.png" /><div class="mask"></div>
+            </li>
+            <li><img src="images/n7.png" /><div class="mask"></div>
+            </li>
+            <li><img src="images/n8.png" /><div class="mask"></div>
+            </li>
+        </ul>
+        <div id="page"></div>
+    </div>
+
+    <script>
+        var container = document.getElementById('container'),
+            li = container.getElementsByTagName('li'),
+            aa = container.getElementsByTagName('a')[0],
+            page = document.getElementById('page'),
+            timer = null;
+            bReady = false;
+
+        var order = [0, 1, 2, 4, 7, 6, 5, 3];   //这个是放标签滚动次序的地方
+
+
+        //随机函数，用于在九宫格跑起来之前就得到要随机到的地方
+        function random(n, m) {
+            return parseInt((m - n) * Math.random() + n);
+        }
+        function start(num, str) {
+            var i = 0;  //此处定义一个i执行效果类似于for循环，不过for循环执行太快，所以不能用
+            var t = 60;  //标记转动速度，也就是每过60毫秒标记重新改变一次
+            var round = 10; //表示标记转动的圈数
+            var rNum = round * 8;   //表示标记转动的次数
+
+            timer = setTimeout(setFreq, t);
+            function setFreq() {　　　　　　　 //首先标记每次刷新就让li所有的class都为空
+                for (var j = 0; j < li.length; j++) {
+                    li[j].className = '';
+                }            //通过i余8得到此刻在order数组中的数字
+                var ord = order[i % li.length];           //该数字就是标记应该出现的位置（我不知道JQuery框架是不是这样处理的）
+                li[ord].className = "active";
+                i++;  //i自增
+                if (i < rNum - 8) {　　　　　　　　　 //当i的数量小于转rNum-8次的数量，t不变
+                    timer = setTimeout(setFreq, t);
+                } else if (i >= rNum - 8 && i < rNum + num) {               //否则让t每次增加li标签位置序列乘以5，此时计时器运行速度会降低，同时标签刷新速度也会降低
+                    t += (i - rNum + 8) * 5;
+                    timer = setTimeout(setFreq, t);
+                }
+                if (i >= rNum + num) {　　　　　　　　 //当i大于转rNum加随机出来的数字次计时器结束，出现信息提示框提示中奖信息
+                    page.innerHTML = "恭喜你中了" + num + str + "";
+                    var timer2 = null;
+                    timer2 = setTimeout(function () {
+                        page.style.display = "block";
+                        clearTimeout(timer2);
+                    }, 1000);
+                    bReady = false;    //当计时器结束后让a标签变为可点击状态
+                    clearTimeout(timer);
+                }
+
+            }
+        }
+
+        var num = 0;    //先定义一个num用来存放得到的随机函数，也可以用来存放后台传来的随机数，前台写这种代码安全性不高
+        aa.onclick = function () {
+            /*'1-8'*/
+            if (bReady) return false;  //当bReady为true时a标签为不可点状态
+            page.style.display = "none"; //这个是处理再次点击时让page框消失的代码
+            bReady = true;   //当点击之后就让bReady为false，即a不可点状态
+            num = random(1, 9)   //随机得到一个数字
+            start(num, "000万现金大礼包");  //执行函数start，num为上面的随机数，后面的字符串为在page信息框中展示的信息，可以随便更改
+        }
+    </script>
+
+
+
+</body>
+
+</html>

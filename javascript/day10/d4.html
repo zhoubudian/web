@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>灵魂Document</title>
+	
+</head>
+<body>
+	昵称: <input type="text"  id="uName" />
+	<script>
+	/*1.找文本框
+	  2.用户输入的内容,保留
+	  3.
+	  4.alert输出
+	*/
+		var oName=document.getElementById("uName");
+		oName.onblur=function(){//onblur 失去焦点
+			alert(oName.value);//输出  获取元素的属性
+		}
+	</script>
+</body>
+</html>

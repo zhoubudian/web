@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+</head>
+<body>
+	<!--
+     
+     如何获取下面表单 select
+
+<form name="a">
+<select name="a" size="1" id=”obj”>
+<option value="a">1</option>
+<option value="b">2</option>
+<option value="c">3</option>
+</select>
+</form> 域的选择部分的文本？()
+    
+	-->
+
+	<script>
+		var length = 10;
+function fn() {
+	console.log(this.length);
+}
+
+var obj = {
+  length: 5,
+  method: function(fn) {
+    fn();
+    arguments[0]();
+  }
+};
+
+obj.method(fn, 1);
+	</script>
+</body>
+</html>

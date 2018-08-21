@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>刷新换图片</title>
+</head>
+<body>
+<img src="images/2.jpg" id="im" />
+
+	<script>	
+        var pic=['2.jpg','3.jpg','4.jpg','8.jpg','6.jpg','7.jpg'];//图片存入数组
+        var oIm=document.getElementById('im');
+        var x=0;
+        
+        //x=parseInt(Math.random()*7);//0-6之间的随机数
+        x=parseInt(Math.random()*6);
+        oIm.src='images/'+pic[x];
+        console.log(x);
+         
+
+	</script>
+</body>
+</html>

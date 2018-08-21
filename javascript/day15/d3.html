@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+//行注释
+/*块注释*/
+//ECMA 6
+
+/*
+变量赋值方式
+1.标量 存于栈(stack)内存
+先进后出 后进先出
+
+
+2.特殊变量 array,object,function  存于堆(heap)内存
+共享
+无论谁改动对象的值,所有人都能看到
+例:微信群名称
+
+*/
+var num=10;//直接赋值
+var price=num;//间接赋值
+
+
+
+
+var a={age:20};//创建一个对象
+var b=a;//间接赋值  b也是一个对象
+b.age=24;//引用类型   引用类型(引用赋值)
+console.log(a);
+
+
+
+	</script>
+</body>
+</html>

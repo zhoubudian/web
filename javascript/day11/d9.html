@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	年龄:　<input type="text" id="age">
+	<button id="btn">确认</button>
+	<script>
+	var oInput=document.getElementById("age");
+	var oBtn=document.getElementById("btn");
+    
+	/*var age=18;*/
+	oBtn.onclick=function(){
+		var week=oInput.value;
+		console.log(week);
+		switch(week){
+			case 1:
+			   console.log("星期一");
+			   break;
+			case 2:
+			   console.log("星期er");
+			   break;
+			case 3:
+			   console.log("星期sab");
+			   break; 
+			default:
+			   console.log("xq");       
+		}
+	}
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+switch:一组开关
+case:情况
+break:中断退出
+default:默认
+switch(){
+	case n:
+	break;
+}
+用途:它是if语句中的一种,它只适用情况固定的时候.
+注意:switch能实现的使用if都能实现,反之不成立.
+if( week == 1)
+
+字符串 += 
+
+一.JS控制CSS方法:
+1.行内样式:
+元素变量名.style.css属性=css属性值;
+ oMsg.style.fontSize=n+"px";
+2.类:
+元素变量名.className ="class名称";
+oMsg.className="bi";
+
+
+二.JS控制HTML标签
+1.id
+document.getElementById();
+控制一个标签
+2.读HTML属性
+getElementsByTagName
+getElementById
+3.改HTML属性
+
+4.双标签控制内容:
+innerHTML/innerText
+5.单标签控制内容:value
+
+js说:在我眼里,一切都是对象;
+
+三.变量(存储量的大小)
+字符串、数值型、布尔、数组、对象、Null、Undefined
+1.标准变量(标量):一个变量名,只能存储一个值.
+string number boolean 标量创建后没有赋值时undefined类型
+undefined(出现方式
+   var sss;
+   typeof sss;
+
+   显示undefined
+)
+
+2.特殊变量:一个变量名,存储多个值.
+Array  数组
+自定义数组  预定义数组
+object 对象
+Null 空  特殊变量创建后没有赋值时Null
+
+getElementsByTagName
+
+
+

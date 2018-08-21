@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document 单标签属性的获取和修改</title>
+</head>
+<body>
+	<input type="text" id="change" />
+	<button id="btn">确定</button>
+	<hr/>
+	<img src="images/xp1.1.jpg" id="pic"  />
+
+	<script>
+	'use strict'
+		var oInput=document.getElementById("change");
+		var oBtn=document.getElementById("btn");
+		var oImg=document.getElementById("pic");
+		var w=0;//改变图片宽度
+
+		oBtn.onclick=function(){//事件绑定
+			/*alert("haoshi");//用alert测试*/
+			/*alert(oInput.value);*/
+			w=oInput.value;//得到用户输入的图片宽度
+			oImg.style.width=w+"px";
+			/*oImg.style.width=oInput.value+"px";*/
+		}
+
+
+		/*注意:表单是通过单标签获取属性的方式得到 值*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>递归小例子</title>
+</head>
+<body>
+    
+
+    <script>
+		function dg(num) {
+			document.write(num + '<br />');
+			if (num > 0) {//边界条件
+				dg(num-1);//递归的前进段
+			}else{
+                document.write("------------"+'<br />');
+            }
+
+            document.write(num+'<br />');//递归的返回段
+		}
+		dg(8);
+	</script>
+</body>
+</html>

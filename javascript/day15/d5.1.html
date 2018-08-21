@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类型转换</title>
+</head>
+<body>
+	<script>
+      //一.隐士转换  仅对数值型字符串有效
+      var a="abc",b="10";
+      //console.log(a += b);//字符串拼接  49010
+      b=30;
+      var c=true;
+      //console.log(a += b);//隐士转换  字符串和数值型相加是都是字符串  49030
+      //console.log(a -= b);//隐士转换  都变成数值型
+        console.log(c += a);
+
+      //二.强制类型转换
+      var str="443";//https
+      str=parseInt(str);//强制转换为整形
+      //str=parseFloat(str);//强制转换浮点型
+      console.log(typeof str);
+	</script>
+</body>
+</html>

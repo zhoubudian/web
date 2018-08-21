@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在javasc中一切都是对象  下列类型使用Typeof验证时,都是object(fn除外) ,可使用constructor来查看类型
+        //下列为:创建某一类型的
+        var num = new Number(5);
+        var str = new String("Are");
+        var bool = new Boolean(true);
+        var arr = new Array(3,22,44,5);
+        var obj = new Object({name:'zby',age:24});
+        var fn = new Function("name","alert('hello'+name)");
+        fn("Tom");
+    /* num;
+Number {0}
+str;
+String {"", length: 0}
+bool;
+Boolean {false}
+arr;
+[]
+obj;
+{}
+fn;
+ƒ anonymous(
+) {
+
+} */
+    </script>
+</body>
+
+</html>

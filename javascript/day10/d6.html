@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document 双标签属性的获取和修改</title>
+</head>
+<body>
+	<p style="font-size: 20px" id="msg">
+	这是什么
+	</p>
+
+	<script>
+		var oMsg=document.getElementById("msg");
+		var con=oMsg.innerHTML;/*读取双标签的内容*/
+		oMsg.innerHTML="改了"//修改双标签的内容
+	</script>
+</body>
+</html>

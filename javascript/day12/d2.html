@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       .bi{ width: 500px;background: #0ff; } 
+	</style>
+</head>
+<body>
+	<button id="big">+</button>
+	<button id="small">-</button>
+	<p id="msg">工作原理：首先设置表达式 n（通常是一个变量）。随后表达式的值会与结构中的每个 case 的值做比较。如果存在匹配，则与该 case 关联的代码块会被执行。请使用 break 来阻止代码自动地向下一个 case 运行。主要是为了补充当两种情况相同时，switch 语句的使用，当两种情况相同时，可以只在第二种情况中写要执行的代码，案例如下：</p>
+
+	<script>
+		var oBig=document.getElementById("big");
+		var oSmall=document.getElementById("small");
+		var oMsg=document.getElementById("msg");
+		var n=16;
+
+		oBig.onclick=function(){
+			//alert("big");
+			n+=2;
+             oMsg.style.fontSize=n+"px";
+             oMsg.className="bi";
+		}
+
+		oSmall.onclick=function(){
+			//alert("small");
+			n -= 2;
+			oMsg.style.fontSize=n+'px';
+
+		}
+	</script>
+</body>
+</html>

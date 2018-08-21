@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+    <div id="show"></div>
+
+	<script>
+		var oShow=document.getElementById("show");
+		var str='<img src="../day10/images/chuan.png" />';
+		setTimeout(
+             function(){
+               oShow.innerHTML=str;
+             },2000);
+
+		setTimeout(
+             function(){
+               oShow.innerHTML="";
+             },6000);
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //argument;参数
+        //callback;回调函数
+      var show=function(){
+          alert('树不要皮必死无疑');
+      };
+
+      function fn(arg,callback){
+          alert(arg);
+          callback;
+          //callback && callback();//不写callback时候,函数正常使用,不会报错
+      }
+      //fn('人不要脸天下无敌');
+      fn('人不要脸天下无敌',show);
+    </script>
+</body>
+
+</html>

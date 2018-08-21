@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="age">
+	<button id="btn">确认</button>
+	<script>
+	var oInput=document.getElementById("age");
+	var oBtn=document.getElementById("btn");
+
+	/*var age=18;*/
+	oBtn.onclick=function(){
+		oAge=oInput.value;
+		if(oAge>=18){
+           alert("军队欢迎你");
+	    }else{
+		   alert("年龄不够");
+	    }
+	}
+	
+	</script>
+</body>
+</html>

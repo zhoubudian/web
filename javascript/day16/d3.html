@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击换图片</title>
+</head>
+<body>
+<img src="images/2.jpg" id="im" />
+
+	<script>	
+        var pic=['2.jpg','3.jpg','4.jpg','8.jpg','6.jpg','7.jpg'];//图片存入数组
+        var oIm=document.getElementById('im');
+        var oSrc=oIm.src;
+        var x=1;
+        
+          oIm.onclick=function(){//匿名函数
+        	//alert();
+        	if(x==pic.length){
+               x=0;
+        	}
+        	
+        	/*x==pic.length-1?x=0:x++; */
+        	oIm.src='images/'+pic[x];
+        	x++;
+        	 console.log(x);
+           } 
+
+	</script>
+</body>
+</html>
