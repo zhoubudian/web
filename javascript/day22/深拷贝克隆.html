@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for in</title>
+</head>
+
+<body>
+    <script>
+        var arr = ['王昭君', '法师', '西汉'];
+        /* for(var i=0;i<arr.length;i++){
+             document.write(arr[i]+'<br />');
+        } */
+        //for in遍历
+        for (var i in arr) {
+            document.write(arr[i] + '<br />');
+            console.log(i);
+        }
+        var obj = {
+            game: '王者荣耀',
+            type: '手游',
+            company: '腾讯'
+        }
+        for (var j in obj) {
+            //document.write(obj.j);   报错
+            document.write(obj[j] + '<br />');
+            console.log(j);
+        }
+    </script>
+</body>
+
+</html>

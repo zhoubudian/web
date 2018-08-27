@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单的轮播</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #box {
+            width: 100%;
+            height: 420px;
+            margin-top: 50px;
+        }
+
+        #box img {
+            width: 100%;
+            height: 420px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="images/header.jpg" id="show" />
+    </div>
+
+
+    <script>
+        var pic = ['header.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg'];
+        var oImg = document.getElementById("show");
+        /* oImg.src="images/"+pic[1]; */
+        var timer = null;
+        var i = 0;
+        function disp() {
+            i++;
+            if (i == pic.length) i=0;
+            oImg.src = "images/" + pic[i];
+        }
+
+        setInterval(disp, 1000);
+
+
+    </script>
+</body>
+
+</html>

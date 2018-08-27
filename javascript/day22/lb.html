@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       li{
+           list-style: none;
+           width: 100px;
+           height: 50px;
+           background: #0ff;
+           margin: 10px;
+       }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+     var oLi=document.getElementsByTagName('li');
+     for(var i=0;i<oLi.length;i++){
+
+         (function(index){
+            oLi[index].onclick=function(){
+                oLi[index].style.transform="scale(0.90)";
+            }
+         })(i);
+         /* oLi[i].index=i;
+         oLi[i].onmousedown=function(){
+            oLi[this.index].style.transform="scale(0.90)";
+         }
+         oLi[i].onmouseup=function(){
+            oLi[this.index].style.transform="scale(1)";
+         } */
+     }
+    </script>
+</body>
+</html>

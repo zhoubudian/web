@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡</title>
+    <style>
+        div {
+            font: 40px/40px '黑体';
+            color: #fff;
+        }
+
+        #one {
+            width: 400px;
+            height: 200px;
+            background: #f00;
+        }
+
+        #two {
+            width: 200px;
+            height: 100px;
+            background: #ff0;
+        }
+
+        #in {
+            width: 100px;
+            height: 50px;
+            background: #00f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one">one
+        <div id="two">two
+            <div id="in">in</div>
+        </div>
+    </div>
+    <script>
+        var one = document.getElementById('one');
+        var two = document.getElementById('two');
+        var oIn = document.getElementById('in');
+        //冒泡的顺序从内往外
+
+        /* e.stopPropagation();
+         e.cancelBubble=true; */
+        //addEventListener 添加事件监听  适用于符合W3C的所有浏览器,IE9以下的低版本除外
+        one.addEventListener('click', function (e) {
+            alert('one');
+            e.stopPropagation();
+        }, false);
+        two.addEventListener('click', function (e) {
+            alert('two');
+            e.stopPropagation();
+        }, false);
+        oIn.addEventListener('click', function (e) {
+            alert('oIn');
+            e.stopPropagation();
+        }, false);
+
+        //IE低版本浏览器
+        /* one.attachEvent('onclick', function () {
+            alert('one');
+            window.event.cancelBubble = true;
+        });
+        two.attachEvent('onclick', function () {
+            alert('two');
+            window.event.cancelBubble = true;
+        });
+        oIn.attachEvent('onclick', function () {
+            alert('oIn');
+            window.event.cancelBubble = true;
+        }); */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>深拷贝克隆</title>
+</head>
+
+<body>
+    <script>
+        var obj1 = {
+            name: "撒哈拉大沙漠",
+            addr: "非洲北部",
+            dad: {
+                name: "地球",
+                addr: "太阳系"
+            }
+        };
+        function clone(obj) {
+            var newObj = new Object();
+            for (var key in obj) {
+                if(typeof obj[key]=='object'){
+                    newObj[key] = clone(obj[key]);
+                }else{
+                    newObj[key] = obj[key];
+                }
+            }
+            return newObj;
+        }
+        var tes = clone(obj1);
+        console.log(tes);
+     /* var obj2=new Object();
+     obj2.name=obj1.name;
+     obj2.addr=obj1.addr;
+     obj1.name='圣托里尼';
+     obj2.dad=obj1.dad;
+     obj2.dad.name="火星"; */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="msg">javascript this 研判</h1>
+
+<script>
+    //this:我
+     
+
+//3.函数嵌套
+//注意:无论嵌套多少层this==>window
+
+/* function fn(){
+    //console.log(this);
+    var fn2=function(){
+        console.log(this);
+        var fn3=function(){
+            console.log('in'+this)
+        }
+        fn3();
+    }
+    fn2();
+}
+fn(); */
+var obj={
+    a:40,
+    fn:function(){
+        console.log(this);//this==>obj  this 指向调用它的那个对象
+        console.log(this.a);
+    }
+}
+//obj.fn();//执行时this 指向调用它的那个对象   ()代表着执行时
+var ccc=obj.fn;  //赋值操作,没有执行函数 所以this==>window
+console.log(ccc());
+
+</script>
+</body>
+</html>

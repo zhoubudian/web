@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //变量作用域:全局变量  或 局部变量
+    //2.局部变量:定义在一个函数里,只能在这个函数中使用
+    function fn(){
+        var a='可达鸭';//局部变量
+        console.log(a);
+    }
+    fn();
+    alert(a);//(父级无法使用子函数中的变量)无法使用函数中的局部变量
+    </script>
+</body>
+</html>

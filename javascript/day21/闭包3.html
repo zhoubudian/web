@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li title="1">我饿了01</li>
+            <li title="2">我饿了02</li>
+            <li title="3">我饿了03</li>
+            <li title="4">我饿了04</li>
+            <li title="5">想吃饭05</li>
+        </ul>
+    </div>
+
+    <script>
+        var oLi = document.getElementsByTagName('li');
+        for (var i = 0; i < oLi.length; i++) {
+            oLi[i].index=i;
+            oLi[i].onclick = function () {
+                console.log(this.index);
+            }
+        }
+    //闭包在表象上市:外部函数声明(创建,定义)内部函数,内部函数引用外部函数中的局部变量,这样当外部函数执行完毕,局部变量不被释放,可以一直使用.
+
+    </script>
+</body>
+
+</html>

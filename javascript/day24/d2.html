@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>右键菜单</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="inp">
+    <script>
+        var oInp = document.getElementById('inp');
+        document.oncontextmenu = function (e) {//MouseEvent 鼠标事件
+            //oInp.onkeyup=function(event){//KeyboardEvent 键盘事件
+            var e = e || window.event;//兼容低版本的IE浏览器
+            console.log(e);
+            //console.log(this);
+            return false;//禁用右键菜单
+        }   
+    </script>
+</body>
+
+</html>

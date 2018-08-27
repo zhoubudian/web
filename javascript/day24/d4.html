@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡</title>
+    <style>
+        div {
+            font: 40px/40px '黑体';
+            color: #fff;
+        }
+
+        #one {
+            width: 400px;
+            height: 200px;
+            background: #f00;
+        }
+
+        #two {
+            width: 200px;
+            height: 100px;
+            background: #ff0;
+        }
+
+        #in {
+            width: 100px;
+            height: 50px;
+            background: #00f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one">one
+        <div id="two">two
+            <div id="in">in</div>
+        </div>
+    </div>
+    <script>
+        var one = document.getElementById('one');
+        var two = document.getElementById('two');
+        var oIn = document.getElementById('in');
+
+        /* e.stopPropagation();
+         e.cancelBubble=true; */
+        one.onclick = function () {
+
+            alert('one');
+        }
+        two.onclick = function () {
+            alert('two');
+        }
+        oIn.onclick = function () {
+            alert('oIn');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>捕获</title>
+    <style>
+        div {
+            font: 40px/40px '黑体';
+            color: #fff;
+        }
+
+        #one {
+            width: 400px;
+            height: 200px;
+            background: #f00;
+        }
+
+        #two {
+            width: 200px;
+            height: 100px;
+            background: #ff0;
+        }
+
+        #in {
+            width: 100px;
+            height: 50px;
+            background: #00f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one">one
+        <div id="two">two
+            <div id="in">in</div>
+        </div>
+    </div>
+    <script>
+        var one = document.getElementById('one');
+        var two = document.getElementById('two');
+        var oIn = document.getElementById('in');
+        //捕获的顺序从外往里
+
+        one.addEventListener('click', function (e) {
+            alert('one');
+            //e.stopPropagation();
+        }, false);
+        two.addEventListener('click', function (e) {
+            alert('two');
+            //e.stopPropagation();
+        }, false);
+        oIn.addEventListener('click', function (e) {
+            alert('oIn');
+            //e.stopPropagation();
+        }, false);
+
+
+        one.addEventListener('click', function (e) {
+            alert('one');
+            //e.stopPropagation();
+        }, true);
+        two.addEventListener('click', function (e) {
+            alert('two');
+            //e.stopPropagation();
+        }, true);
+        oIn.addEventListener('click', function (e) {
+            alert('oIn');
+            //e.stopPropagation();
+        }, true);
+
+
+/* obj.addEventListener(type,function(){},false/true); 
+false  冒泡
+true  捕获
+
+同一元素绑定多个事件,先捕获后冒泡
+
+
+事件冒泡和事件捕获的本质当DMO对象发生多层嵌套事件时事件的执行顺序 
+*/
+
+    </script>
+</body>
+
+</html>
