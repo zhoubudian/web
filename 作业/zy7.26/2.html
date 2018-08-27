@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div,ul,li,p{ margin: 0; padding:0;}
+        li{ list-style: none;}
+        #all{ width: 900px; height: 400px;  margin: 100px auto; background: #f7f7f7; box-shadow: 0 0 8px #000;}
+        #all .top{ width:100%; height: 50px; position: relative;}
+        #all .top div:nth-child(1){width: 180px; height: 50px;
+            font-size:28px; font-weight: bold; text-align: center; line-height: 50px;}
+        #all .top div:nth-child(2){ width: 710px; height: 2px; background: #82dbff;
+        position: absolute; top:25px; left:180px;}
+        #all .top div:nth-child(3){ width: 40px; height:25px; background: #82dbff;border-radius: 10px;
+        position: absolute; right:10px; top:15px; color: #fff;text-align: center; line-height: 25px;
+        font-size: 16px;}
+
+        #all .footer{ width: 880px; height:340px;  margin-left: 10px; margin-top: 10px;}
+        #all .footer ul{ width:210px; height:340px; background: #fff; overflow: hidden; float: left;
+            margin-left: 5px;}
+        #all .footer ul li:nth-child(1){ width: 199px; height:244px;
+            background: url("images/111.jpg") no-repeat;
+         margin-left: 5px; position: relative;z-index: 0;}
+        #all .footer ul:nth-child(2) li:nth-child(1){
+            background: url("images/222.jpg") no-repeat; }
+        #all .footer ul:nth-child(4) li:nth-child(1){
+            background: url("images/222.jpg") no-repeat; }
+        #all .footer ul li:nth-child(1) .hov{ width:199px; height:244px;
+            background: rgba(0,0,0,.6) url("images/play-ico.png") no-repeat center;position: absolute;
+            left:0; top:0; opacity: 0; transition: 1s;z-index: 50}
+        #all .footer ul li:nth-child(1):hover .hov{ opacity:1;  transition: 1s;}
+        #all .footer ul li:nth-child(1) .des{ width: 100%; height: 20px; background: rgba(0,0,0,.8);
+        color: #fff;text-align: center;line-height: 20px; font-size: 16px; position: absolute;bottom: 0; left:0;
+            z-index: 100;}
+        #all .footer ul li:nth-child(2){ font-size: 18px; color: #000; line-height: 25px; margin-top: 10px;
+        margin-left: 10px;}
+        #all .footer ul li:nth-child(3){ font-size:16px; color: #7d7d7d; line-height: 25px;margin-left: 10px;}
+        #all .footer ul:nth-child(2) li:nth-child(1) .pho{ width: 64px; height: 64px;position: absolute;
+            top:0; left:0; z-index: 60; background: url("images/vip-ico.png") no-repeat;}
+        #all .footer ul:nth-child(3) li:nth-child(1) .phoo{ width: 64px; height: 64px;position: absolute;
+            top:0; left:0; z-index: 60; background: url("images/sd-ico.png") no-repeat;}
+    </style>
+</head>
+<body>
+   <div id="all">
+       <div class="top">
+           <div>热播推荐</div>
+           <div></div>
+           <div>更多</div>
+       </div>
+       <div class="footer">
+           <ul>
+               <li>
+                   <a href="#"><div class="hov"></div></a>
+                   <p class="des">高清&nbsp;&nbsp;02:08:26</p>
+               </li>
+               <li>让子弹飞</li>
+               <li>纯爷们姜文血性制作</li>
+           </ul>
+           <ul>
+               <li>
+                   <a href="#"><div class="hov"></div></a>
+                   <p class="des">高清&nbsp;&nbsp;01:40:36</p>
+                   <div class="pho"></div>
+               </li>
+               <li>超时空同居</li>
+               <li>雷佳佳变亿万富豪</li>
+
+           </ul>
+           <ul>
+               <li>
+                   <a href="#"><div class="hov"></div></a>
+                   <p class="des">高清&nbsp;&nbsp;02:08:26</p>
+                   <div class="phoo"></div>
+               </li>
+               <li>神探夏洛克</li>
+               <li>卷服揭幽灵新娘谋杀案</li>
+           </ul>
+           <ul>
+               <li>
+                   <a href="#"><div class="hov"></div></a>
+                   <p class="des">高清&nbsp;&nbsp;02:08:26</p>
+               </li>
+               <li>最后的巫师猎人</li>
+               <li>范.迪塞尔战神附身</li>
+           </ul>
+       </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单/双号</title>
+	<style>
+      div,h2,p,ul,li{
+      	margin:0;
+      	padding:0;
+      }
+      h2{
+      	text-align: center;
+      	line-height: 50px;
+      }
+      #cxk{
+      	width: 400px;
+      	height: 200px;
+      	margin: 20px auto;
+      	box-shadow: 0px 0px 5px #ccc;
+      }
+      #sel{
+      	width: 50px;
+      	height:30px;
+      	margin: 50px 0 0 70px;
+      }
+      #inp{
+      	height: 25px;
+      	margin-left: 20px;
+      }
+      #btn{
+      	margin-top: 20px;
+      	margin-left: 170px;
+      }
+      p{
+      	text-align: center;
+      	margin-top: 20px;
+      	color: #f00;
+      }
+
+
+      #tc{
+      	width: 100%;
+      	height: 100%;
+      	background: rgba(0,0,0,.6);
+      	position: fixed;
+      	top: 0;
+      	left: 0;
+      	z-index: 100;
+      	display: none;
+      }
+      .ts{
+          width: 300px;
+          height: 200px;
+          margin:200px auto;
+          background: #fff;
+      }
+      .ts p{
+      	line-height: 80px;
+        font-size: 16px;
+        color: #000;
+      }
+      .ts h3{
+      	text-align: center;
+      	line-height: 30px;
+      	color: #f00;
+      	font-size: 20px;
+      }
+      .close{
+        color: #000;
+        font-size: 36px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+      }
+	</style>
+</head>
+<body>
+	
+     <h2>查询车牌限行</h2>
+     <div id="cxk">
+     	<select name="" id="sel">
+     		<option>黑A</option>
+     		<option>黑B</option>
+     		<option>黑C</option>
+     		<option>黑D</option>
+     		<option>黑E</option>
+     	</select>
+     	<input type="text" id="inp" placeholder="输入车牌号后五位">
+     	<br />
+     	<input type="submit" value="查询" id="btn">
+
+        <p></p>
+     </div>
+
+     <div id="tc">
+     	<div class="ts">
+     		<p></p>
+     		<h3></h3>
+     		<div class="close">
+     			X
+     		</div>
+     	</div>
+     </div>
+
+	<script>
+		var oSel=document.getElementById('sel');
+		var oInp=document.getElementById('inp');
+		var oBtn=document.getElementById('btn');
+		var oP=document.getElementsByTagName('p')[0];
+        var z='';
+        var oPt=document.getElementsByTagName('p')[1];
+        var oClose=document.getElementsByClassName('close')[0];
+        var oTc=document.getElementById('tc');
+        var oH3=document.getElementsByTagName('h3')[0];
+
+		oBtn.onclick=function(){
+			var num=oInp.value.length;
+			if(num==5){
+               //alert();
+               z=oInp.value[oInp.value.length-1];
+               if(isNaN(z)){
+                  oP.innerHTML='您车牌号最后一位是字母';
+               }else{
+               	  z=parseInt(z);
+               	  ds(z);
+               }
+
+			}else{
+				oP.innerHTML="输入的车牌号有误";
+			}
+		}
+
+		function ds(a){
+			if(a%2==0){
+              //alert('双');
+               oTc.style.display='block';
+               oPt.innerHTML='您的车牌号为:'+oSel.value+'.'+oInp.value;
+               oH3.innerHTML='没有限制';
+			}else{
+               oTc.style.display='block';
+               oPt.innerHTML='您的车牌号为:'+oSel.value+'.'+oInp.value;
+               oH3.innerHTML='限制通行';
+			}
+
+		}
+
+
+		oClose.onclick=function(){
+          oTc.style.display='none';
+		}
+	</script>
+</body>
+</html>

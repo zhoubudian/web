@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<style>
+      #all{
+      	width: 430px;
+      	height: 330px;
+      	margin: 100px auto;
+      	background: #fff;
+      	box-shadow: 2px 5px 5px #ccc;
+      }
+      .top{
+      	width: 100%;
+      	height: 160px;
+      }
+      .top img{
+      	width: 100%;
+      	height: 160px;
+      }
+      .bottom{
+      	width: 100%;
+      	height: 170px;
+      }
+      .uName{
+      	height: 50px;
+      	width: 100%;
+      	margin-left: 30px;
+      	line-height: 50px;
+      }
+      .uName input{
+      	height:30px;
+      	border:none;
+      }
+      .uName span{
+      	font-size: 14px;
+      }
+
+      .password{
+      	height: 50px;
+      	width: 100%;
+      	margin-left: 30px;
+      	line-height: 50px;
+      }
+      .password input{
+      	height:30px;
+      	border:none;
+      }
+      .password span{
+      	font-size: 14px;
+      }
+
+      .btn{
+      	width: 240px;
+      	margin:20px auto;
+      	height: 30px;
+      }
+      .btn input{
+      	width: 240px;
+      	height: 30px;
+      	background: #0AC1FE;
+      	border-radius: 5px;
+      	color: #fff;
+      	font-size: 18px;
+      }
+	</style>
+</head>
+<body>
+    <div id="all">
+    	<div class="top">
+    		<img src="images/qq1.png" />
+    	</div>
+        
+        <div class="bottom">
+           <div class="uName">
+           	   用户名:
+        	   <input type="text" placeholder="请输入用户名" id="inp">
+               <span id="ts"></span>
+           </div>
+        	
+
+        	<div class="password">
+           	   手机号:
+        	   <input type="text" placeholder="请输入手机号" id="pass">
+               <span id="sj"></span>
+           </div>
+
+
+           <div class="btn">
+           	<input type="submit" value="注册" id="zc">
+           </div>
+        </div>
+
+    </div>
+
+
+	   <script>
+	   	 var oInp=document.getElementById('inp');
+	   	 var oTs =document.getElementById('ts');
+	   	 var oPass=document.getElementById('pass');
+	   	 var oSj =document.getElementById('sj');
+	   	 var oZc=document.getElementById('zc');
+         oInp.onfocus=function(){
+         	/*alert("12345");*/
+         	oTs.innerHTML="输入的用户名不能全为数字";
+         }
+         oInp.onblur=function(){
+         	/*alert();*/
+         	if(isNaN(oInp.value)){
+               oTs.style.color="red";
+               oTs.innerHTML="√";
+         	}else{
+               oTs.style.color="red";
+               oTs.innerHTML="用户名格式错误";
+         	}
+         }
+
+         oPass.onfocus=function(){
+         	/*alert("12345");*/
+         	oSj.innerHTML="输入的手机号为数字";
+         }
+         oPass.onblur=function(){
+         	/*alert();*/
+         	if(isNaN(oPass.value)){
+               oSj.style.color="red";
+               oSj.innerHTML="手机号格式错误";
+         	}else{
+               oSj.style.color="red";
+               oSj.innerHTML="√";
+         	}
+         }
+
+
+        oZc.onclick=function(){
+        	if(isNaN(oInp.value) && !isNaN(oPass.value)){
+               alert("注册成功");
+        	}else{
+        		alert("用户名或者手机号输入格式错误");
+        	}
+        }
+
+	   </script>
+</body>
+</html>

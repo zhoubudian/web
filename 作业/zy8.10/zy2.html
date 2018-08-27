@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div,ul,li,p{margin: 0;padding: 0;}
+	li{
+		list-style: none;
+	}
+     #all{
+     	width: 260px;
+     	height: 520px;
+     	margin:30px auto;
+     	position: relative;
+     }
+     .pho{
+     	width: 260px;
+     	height: 520px;
+     }
+     .pho img{
+     	width: 100%;
+     	height: 520px;
+     }
+     .msg{
+     	width: 235px;
+     	height:330px;
+     	background: #fff;
+     	position: absolute;
+     	top: 65px;
+     	left: 12px;
+     	overflow: auto;
+     }
+     .htalk{
+     	margin: 5px;
+     }
+     .htalk span{
+     	display: block;
+     	height: 35px;
+     	text-align: left;
+     	background: #999;
+     	border-radius: 5px;
+     	line-height: 30px;
+     	padding:0 5px;
+     	text-align: left;
+     }
+     .htalk span img{
+         width: 30px;
+         height: 30px;
+         vertical-align: middle;
+     }
+
+    .ltalk{
+        margin: 5px;
+    }
+
+    .ltalk span{
+    	display: block;
+     	height: 35px;
+     	text-align: right;
+     	background: #0f0;
+     	border-radius: 5px;
+     	line-height: 30px;
+     	padding:0 5px;
+     }
+     .ltalk span img{
+         width: 30px;
+         height: 30px;
+         vertical-align: middle;
+     }
+     .list{
+     	width: 235px;
+     	height: 50px;
+     	position: absolute;
+     	bottom: 80px;
+     	left: 12px;
+     	border-top: 1px solid #333;
+     	background: #fff;
+     }
+     .rwk{
+     	width: 30px;
+     	height: 30px;
+     	float:left;
+     	margin:10px 0 0 2px;
+     	position: relative;
+     }
+     .rwk img{
+     	width: 30px;
+     	height: 30px;
+     	position: absolute;
+     	top: 0;
+     	left: 0;
+
+     }
+     .rwk img:nth-child(2){
+     	display: none;
+     }
+     .list input{
+     	width: 140px;
+     	height: 25px;
+     	margin: 10px 0 0 5px;
+     }
+     .list button{
+     	height: 25px;
+     	border-radius: 4px;
+     }
+	</style>
+</head>
+<body>
+	<div id="all">
+		<div class="pho">
+			<img src="images/timg.jpg" />
+		</div>
+
+		<div class="msg" id="msg">
+			<div class="htalk">
+				<span>
+				   <img src="images/t.jpg"  />
+				   我是后羿!
+				</span> 
+			</div>
+			<div class="ltalk">
+				<span>
+				   我是刘婵!
+				   <img src="images/t.png"  />
+				</span>
+			</div>
+		</div>
+
+		<div class="list">
+			<div class="rwk" id="rwk">
+				<img src="images/t.jpg"  id="himg" />
+				<img src="images/t.png"  id="limg" />
+			</div>
+			<input type="text" id="nr">
+			<button id="btn">发送</button>
+		</div>
+	</div>
+
+
+	<script>
+	    var oRwk=document.getElementById("rwk");
+		var oMsg=document.getElementById("msg");
+        var oHimg=document.getElementById("himg");
+        var oLimg=document.getElementById("limg");
+        var oNr =document.getElementById("nr") ;
+        var oBtn=document.getElementById("btn");
+        var bool=true;
+        var hta='<img src="images/t.jpg">';
+        var lta='<img src="images/t.png">';
+        var n=1;
+
+        oRwk.onclick=function(){
+        	if( bool == true){
+               oHimg.style.display="none";
+               oLimg.style.display="block";
+               bool=false;
+               n++;
+        	}else{
+        	   oHimg.style.display="block";
+               oLimg.style.display="none";
+               bool=true;
+               n++;
+        	}
+        }
+
+
+        oBtn.onclick=function(){
+     	    if(n%2==1){
+                oMsg.innerHTML +=('<div class="htalk">'+'<span>'+
+                hta+oNr.value+'</span>'+'</div>');
+        	}else{
+        		oMsg.innerHTML +=('<div class="ltalk">'+'<span>'+
+                	oNr.value+lta+'</span>'+'</div>');       	
+                }
+        	
+        }
+
+
+       
+   
+       
+	</script>
+</body>
+</html>

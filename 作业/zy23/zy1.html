@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    请输入你的年龄<input type="text" id="inp">
+    <p></p>
+    <script>
+        var oInp = document.getElementById('inp'),
+            oP = document.getElementsByTagName('p')[0];
+        var age;
+        oInp.onfocus = function () {
+            oInp.value = '';
+            oP.innerHTML = '';
+        }
+        oInp.onblur = function () {
+            age=parseInt(oInp.value);
+            if (age == '' || isNaN(age) == true) {
+                oP.innerHTML = '输入错误';
+            } else if (age < 14) {
+                oP.innerHTML = '你还是个儿童';
+            } else if (age >= 14 && age < 24) {
+                oP.innerHTML = '青少年';
+            } else if (age >= 24 && age < 40) {
+                oP.innerHTML = '青年';
+            } else if (age >= 40 && age < 60) {
+                oP.innerHTML = '中年';
+            } else if (age >= 60 && age < 100) {
+                oP.innerHTML = '老人';
+            } else {
+                oP.innerHTML = '神仙';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

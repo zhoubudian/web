@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div,ul,li{ margin: 0;
+			padding:0;}
+         #all{
+			 width:600px;
+			 height:500px;
+			 margin: 70px auto;
+			 box-shadow: 2px 3px 6px #ccc;
+		 }
+		.bp{
+			width:430px;
+			height:440px;
+			float: left;
+			margin-top: 25px;;
+		}
+		.xp{
+			width:80px;
+			height: 300px;
+			float: right;
+			margin: 25px 10px 0 0;
+		}
+		.xp li{
+			width: 80px;
+			height:80px;
+			list-style: none;
+			margin-top: 10px;
+		}
+		.xp li img{
+			width: 80px;
+			height:80px;
+		}
+	</style>
+</head>
+<body>
+   <div id="all">
+       <div>
+		   <img src="images/b1.PNG" class="bp"/>
+	   </div>
+	   <div class="xp">
+		   <ul>
+			   <li><img src="images/b1.PNG"/ ></li>
+			   <li><img src="images/b2.PNG" /></li>
+			   <li><img src="images/b3.PNG" /></li>
+		   </ul>
+	   </div>
+   </div>
+
+<script>
+      var oBp=document.getElementsByClassName("bp")[0];
+	  var oImg=document.getElementsByTagName("img");
+
+     for(var i=1;i<oImg.length;i++){//闭包
+     	  oImg[i].index=i;//自定义属性
+          oImg[i].onclick=function(){
+            oBp.src = oImg[this.index].src;
+          }
+     }
+	
+</script>
+</body>
+</html>

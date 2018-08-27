@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机英雄</title>
+	<style>
+     div,ul,li{
+     	margin:0;
+     	padding: 0;
+     }
+     li{
+     	list-style: none;
+     }
+     #drw{
+     	width: 100%;
+     	height: 500px;
+     	background: #F8E3E8;
+     	overflow: hidden;
+     	position: relative;
+     }
+     .bj{
+     	width: 100%;
+     	height: 200px;
+     	background: #555E72;
+     	margin-top: 150px;
+     	text-align: center;
+     	line-height: 200px;
+     	color: #fff;
+     	font-size: 10em;
+     }
+     .left,.right{
+     	width: 500px;
+     	height: 500px;
+     }
+      .left img,.right img{
+      	width: 500px;
+      	height: 500px;
+
+      }
+      .left{
+      	float: left;
+      	position: absolute;
+      	top:0;
+      	left: 30px;
+      }
+      .right{
+      	float: right;
+      	position: absolute;
+      	top: 0;
+      	right: 30px;
+      }
+      .pho1,.pho2{
+      	width: 663px;
+      	height: 162px;
+      	margin:10px auto;
+      }
+	</style>
+</head>
+<body>
+	<div id="drw" >
+		<div class="bj">
+		    vs
+		</div>
+
+		<div class="left">
+			<img src="images/rw (1).png" id="fl" />
+		</div>
+
+		<div class="right">
+			<img src="images/rw (2).png" id="fr" />
+		</div>
+
+	</div>
+
+     <div class="pho1">
+     	<img src="images/xtt.png" />
+     </div>
+     <div class="pho2">
+     	<img src="images/xtt1.png" />
+     </div>
+
+
+	<script>
+		var arro=['rw (1).png','rw (3).png','rw (4).png','rw (5).png','rw (6).png','rw (7).png','rw (8).png','rw (9).png'];
+		var arrt=['rw (2).png','rw (10).png','rw (11).png','rw (12).png','rw (13).png','rw (14).png','rw (15).png','rw (16).png'];
+		var one=parseInt(Math.random()*8);
+		var two=parseInt(Math.random()*8);
+        var oFl=document.getElementsByTagName("img")[0];
+        var oFr=document.getElementsByTagName("img")[1];
+
+        oFl.src='images/'+arro[one];
+        oFr.src='images/'+arrt[two];
+       
+	</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>转盘抽奖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #all {
+            width: 430px;
+            height: 430px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        #zp {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 1s;
+        }
+
+        #zhiz {
+            position: absolute;
+            z-index: 9;
+            top: 98px;
+            left: 147px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <img src="images/index.png" id="zp" />
+        <img src="images/point.png" id="zhiz" />
+    </div>
+    <script>
+        var oZp = document.getElementById('zp'),
+            oPoint = document.getElementById('zhiz'),
+            oDeg = 36,
+            n = 0,
+            num = 0,
+            timer = null,
+            bool = true;
+
+        function random() {
+            return parseInt(Math.random() * 10) * 36;
+        }
+
+        oPoint.onclick = function () {
+            if (bool) {
+                n=0;
+                oZp.style.transform = "rotate(0deg)";
+                num = random();
+                view(num);
+                bool = false;
+            }
+
+        }
+        function view(a) {
+
+            clearInterval(timer);
+            timer=setInterval(xz,100);
+
+            function xz(){
+                
+                if(n/360<3){
+                    n=parseFloat(Math.random()*3600);
+                }else{
+                    oZp.style.transform = "rotate(" + n + "deg)";
+                    console.log(n);
+                    clearInterval(timer);
+                    bool=true;
+                }
+            }
+        } 
+    </script>
+</body>
+
+</html>

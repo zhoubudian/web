@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width:300px;
+            height:100px;
+            background: #ffffff;
+            margin:200px auto;
+            box-shadow: 0px 0px 10px #ccc;
+            overflow: hidden;
+        }
+        p{
+            color: #797979;
+            margin: 10px 10px;
+        }
+        input{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body id="body">
+<div>
+    <p> 输入 one/two/three/four 试一下</p>
+    <input type="text" id="inp">
+    <button id="btn">确认</button>
+</div>
+
+<script>
+  var oBody = document.getElementById("body");
+  var oInput = document.getElementById("inp");
+  var oBtn = document.getElementById("btn");
+  var col;
+  var acol=['one','two','three','four']
+    
+    oBtn.onclick=function () {
+        /*alert();*/
+        col=oInput.value;
+        if(col == acol[0]){
+             oBody.style.background="#000";
+        }else if(col == acol[1]){
+            oBody.style.background="#f00";
+        }else if(col == acol[2]){
+            oBody.style.background="#ff0";
+        }else if(col == acol[3]){
+            oBody.style.background="#0ff";
+        }else{
+            alert("输入错误");
+        }
+    }
+</script>
+</body>
+</html>

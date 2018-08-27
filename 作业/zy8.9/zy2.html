@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div,ul,li{ margin: 0;
+			padding:0;}
+         #all{
+			 width:600px;
+			 height:500px;
+			 margin: 70px auto;
+			 box-shadow: 2px 3px 6px #ccc;
+		 }
+		.bp{
+			width:430px;
+			height:440px;
+			float: left;
+			margin-top: 25px;;
+		}
+		.xp{
+			width:80px;
+			height: 300px;
+			float: right;
+			margin: 25px 10px 0 0;
+		}
+		.xp li{
+			width: 80px;
+			height:80px;
+			list-style: none;
+			margin-top: 10px;
+		}
+		.xp li:nth-child(1){
+			background: url("images/x1.PNG") no-repeat;
+		}
+		.xp li:nth-child(2){
+			background: url("images/x2.PNG") no-repeat;
+		}
+		.xp li:nth-child(3){
+			background: url("images/x3.PNG") no-repeat;
+		}
+		.xp li:hover{
+			border:1px solid #B99E77;
+		}
+	</style>
+</head>
+<body>
+   <div id="all">
+       <div class="bp">
+		   <img src="images/b1.PNG" />
+	   </div>
+	   <div class="xp">
+		   <ul>
+			   <li></li>
+			   <li></li>
+			   <li></li>
+		   </ul>
+	   </div>
+   </div>
+
+<script>
+      var oBp=document.getElementsByClassName("bp")[0];
+	  var oLi=document.getElementsByTagName("li");
+	  var arr=['b1.PNG','b2.PNG','b4.PNG'];
+
+	oLi[0].onclick=function(){
+		//alert();
+		oBp.innerHTML='<img src="images/'+arr[0]+'" />';
+	}
+	  oLi[1].onclick=function(){
+		  //alert();
+		  oBp.innerHTML='<img src="images/'+arr[1]+'" />';
+	  }
+	  oLi[2].onclick=function(){
+		  //alert();
+		  oBp.innerHTML='<img src="images/'+arr[2]+'" />';
+	  }
+</script>
+</body>
+</html>

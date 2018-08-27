@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       p{ font-size: 20px; color: #f00; }
+	</style>
+</head>
+<body>
+	<input type="text" id="name">
+	<select name="" id="sele">
+		<option>北京</option>
+		<option>上海</option>
+		<option>杭州</option>
+		<option>广州</option>
+	</select>
+    <button id="btn">确定</button>
+    <p id="sc"></p>
+
+
+<script>
+	var oInput=document.getElementById("name");
+    var oSele=document.getElementById("sele");
+    var oBtn=document.getElementById("btn");
+    var oP=document.getElementById("sc");
+
+
+    oBtn.onclick=function(){
+    	/*alert("a");*/
+    	oP.innerHTML=oInput.value+"　最喜欢的城市是："+oSele.value;
+    }
+</script>
+
+</body>
+</html>

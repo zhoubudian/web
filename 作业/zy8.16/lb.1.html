@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <link rel="stylesheet" href="css/index.css">
+
+
+</head>
+
+<body>
+    <div class="wrap" id="wrap">
+        <ul id="pic">
+            <li><img src="images/header.jpg" /></li>
+            <li><img src="images/img1.jpg" /></li>
+            <li><img src="images/img2.jpg" /></li>
+            <li><img src="images/img3.jpg" /></li>
+        </ul>
+        <ol id="list">
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ol>
+    </div>
+
+
+
+    <script>
+        var oWrap = document.getElementById("wrap"),
+            oPic = document.getElementById('pic'),
+            oLi = document.getElementById('list').getElementsByTagName('li'),
+            num = 0,
+            timer = null;
+
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        timer = setInterval(xnum, 2000);
+
+        function xnum() {
+            num++;
+            if (num == oLi.length) {
+                num = 0
+            }
+            changeImg(num);
+        }
+
+        function changeImg(a) {
+            for (var i = 0; i < oLi.length; i++) {
+                oLi[i].className = '';
+            }
+            oLi[a].className = 'on';
+            oPic.style.top = '-420' * a + 'px';
+            num = a;
+        }
+
+        oWrap.onmouseover = function () {
+            clearInterval(timer);
+        }
+
+        oWrap.onmouseout = function () {
+            timer = setInterval(xnum, 2000);
+        }
+
+
+        for (var j = 0; j < oLi.length; j++) {
+            oLi[j].index = j;
+            oLi[j].onmouseover = function () {
+                /*clearInterval(timer);*/
+                changeImg(this.index);
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

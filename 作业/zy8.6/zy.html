@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<style>
+     body,header,main,div,ul,li,p,a,dl,dd,dt,footer,h2{ margin: 0; padding:0; }
+	li{ list-style: none; }
+	.clear {
+	clear: both;
+	height: 0;
+	overflow: hidden;}
+	/* header */
+	header { width: 98%; height: 49px; background: #ef741a;
+		padding:7px 0 0 2%;box-shadow: 0 2px 2px #666; }
+	header li{ width: 32%;  float: left }
+	header li:nth-child(2){text-align: center;}
+	header li:nth-child(2) a{ text-decoration: none;color: #fff;font-size: 2rem; text-shadow: 0 2px 2px #333;
+		letter-spacing: 2px;}
+    header li:nth-child(3){ text-align: right; }
+
+    #banner{ width: 100%; height: 120px; background: #ededed;
+    	box-shadow: 0 3px 5px #ccc;overflow: hidden; }
+    #banner dt{ width: 33%; height: 100px; margin:10px 0 0 2%;
+    float: left; }
+    #banner dt img{ width: 100%;height: 100px; }
+    #banner dd{ float: left; }
+    #banner dd:nth-of-type(1){ font-size: 1.3rem; color: #55534f;
+    font-weight: bold; margin:20px 0 0 2%; }
+    #banner dd:nth-of-type(2),#banner dd:nth-of-type(3){font-size: 0.8rem;color: #7b766f;margin-left: 2%;}
+    #banner dd:nth-of-type(2){ margin-top: 10px; }
+    #banner dd:nth-of-type(3){ margin-top: 5px; }
+
+    main{ width: 100%; height: 870px; background: #ededed;
+    margin-top: 5px; }
+    main .pj{ width: 100%; height: 80px;}
+    main .pj ul li{ width: 45%;float: left;margin:15px 0 0 2%; font-size: 0.7rem; color: #716e69;}
+    main .pj ul li img{ width: 10%; vertical-align: -2px;}
+    main .pj ul li:nth-child(2){ margin-left: 5.5%; }
+    main .phoa{ width: 100%; height: 280px; }
+    main .phoa ul li{ float: left; width: 32%; height: 130px;
+    	margin-left: 1%; margin-top: 10px}
+    main .phoa ul li img{ width: 100%; height: 130px; }
+    main .phoa ul li:nth-child(1),
+    main .phoa ul li:nth-child(2),
+    main .phoa ul li:nth-child(3){ margin-top: 0; }
+    main .syn{ width: 96%; height: 250px; margin-left:2%; 
+    	background: #f7f6f5;box-shadow: 0 0 2px #ccc;}
+    main .syn h2{ width: 100%; height: 40px;
+    border-bottom: 1px dashed #ccc; color: #5f5d5a;
+    line-height:40px; margin-left: 2%;font-size: 1.1rem; }	
+    main .syn p{ width: 96%; margin:5px 0 0 2%;color: #989591; padding-bottom: 10px;}
+    main .syn p:nth-of-type(2){ font-size: 0.9rem;width: 96%;
+    margin-left:2%;color: #283cb6; margin-top: 15px; }
+    main .syn p:nth-of-type(2) span{ float: right; color: #f00;}
+    main .pl{ width: 100%; height: 170px; 
+    margin-top: 5px; position: relative;}
+    main .pl .tx{ width: 20%; height:60px; float: left;
+    	margin:10px 0 0 2%;}
+    main .pl .tx img{width: 100%;height:60px;}
+    main .pl .dhk{ width: 72%; height: 150px; background: 
+    #fff; border: 1px solid #ccc; float: right;margin:10px 2% 0 ;border-radius: 10px; }
+    main .pl .dhk h2{ font-size: 1.2rem;  margin:5px 0 0 2%;}
+    main .pl .dhk span{ font-size: 0.7rem;color: #818181;
+    margin: 0;padding: 0; }
+    main .pl .dhk p{ margin: 5px 0 0 2%; color: #4d4d4d;}
+    main .pl .sj{ width: 2%;height: 16px;
+    background: url(images/sjiao.jpg) no-repeat center center;
+    position: absolute;top: 30px;left: 24%; }
+    main .org{ width: 100%; height: 65px;margin-top: 5px; }
+    main .org ul li{ width: 30%; height: 60px;
+    background: #f07a23; float: left;margin-left:2%;
+    border: 1px solid #ca6417;border-radius:5px; color: #fff;
+    text-align: center; line-height: 60px;font-size:1.3rem;  }
+
+    footer{ width: 100%; height: 56px;background: #303030; }
+    footer ul li{ width: 24%; height: 56px; text-align: center;
+    	line-height: 56px; float: left;
+    }	
+    footer ul li img{ height: 56px; }
+    footer ul li:nth-child(1),footer ul li:nth-child(2),
+    footer ul li:nth-child(3){ border-right: 1px solid #0B0B0A; }
+    footer ul li a{ font-size: 1.3rem;color: #BFBAB4;
+    text-shadow: 0 1px 1px #76746F;text-decoration: none; }
+    footer ul li:hover{ background: #2A2A2A; }
+    footer ul li:hover a{ color: #fff; }
+
+    @media (min-width: 370px){
+    	#banner dd:nth-of-type(1){ font-size: 1.4rem }
+    	#banner dd:nth-of-type(2),#banner dd:nth-of-type(3){
+    		font-size: 0.9rem
+    	}
+    	main{ height: 900px; }
+    	main .pj ul li{ margin:15px 0 0 3%; font-size:0.9rem; }
+    	main .pj ul li:nth-child(2){ margin-left: 6.5%; }
+    	main .syn{height: 270px; }
+    	main .syn p{ font-size: 1.2rem}
+    	main .syn h2{ font-size: 1.3rem; }	
+    	main .syn p:nth-of-type(2){ font-size: 1rem;}
+    	main .pl .tx{  height:80px; }
+    	main .pl .tx img{height: 80px;}
+
+   
+    }
+    @media (min-width: 410px){
+        #banner{  height: 140px; }
+        #banner dt{ width: 33%; height: 120px; }
+        #banner dt img{ width: 100%;height: 120px; }
+        #banner dd:nth-of-type(1){ font-size: 1.6rem }
+    	#banner dd:nth-of-type(2),#banner dd:nth-of-type(3){
+    		font-size: 1rem
+    	}
+    	main{ height: 900px; }
+    	main .pj ul li{ margin:15px 0 0 3%; font-size:1rem; }
+    	main .syn{height: 280px; }
+    	main .syn p{ font-size: 1.2rem}
+    	main .syn h2{ font-size: 1.3rem; }	
+    	main .syn p:nth-of-type(2){ font-size: 1.1rem;}
+    	main .pl .tx{  height:100px; }
+    	main .pl .tx img{height: 100px;}
+    }
+
+	</style>
+</head>
+<body>
+	<header>
+		<ul>
+			<li><a href="#"><img src="images/sg.jpg" alt=""></a></li>
+			<li><a href="#">附近</a></li>
+			<li><a href="#"><img src="images/r.jpg" alt=""></a></li>
+		</ul>	
+	</header>
+
+	<div id="banner">
+		<dl>
+			<dt>
+				<img src="images/t1.jpg" />
+			</dt>
+			<dd>中厨 Chefs Gallery</dd>
+			<dd>12/501 George Street Sydney</dd>
+			<dd>NSW 2000,Australia</dd>
+		</dl>
+	</div>
+
+	<main>
+		<div class="pj">
+			<ul>
+				<li>
+				    味觉:
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+				</li>
+				<li>
+				    氛　围:
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+				</li>
+				<li>
+				    服务:
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+				</li>
+				<li>
+				    总体感觉:
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+					<img src="images/xx.jpg" />
+				</li>
+			</ul>
+		</div>
+
+		<div class="phoa">
+			<ul>
+				<li><img src="images/t2.jpg" /></li>
+				<li><img src="images/t3.jpg" /></li>
+				<li><img src="images/t4.jpg" /></li>
+				<li><img src="images/t5.jpg" /></li>
+				<li><img src="images/t6.jpg" /></li>
+				<li><img src="images/t7.jpg" /></li>
+			</ul>
+		</div>
+
+		<div class="syn">
+			<h2>店铺简介</h2>
+            <p>Mr. Johnson had never been up in an aerophane before and he had read a lot about air accidents, so one day when a friend offered to take him for a ride in his own small phane.</p>
+            <h2>本店介绍</h2>
+            <p>红旗大街店 　哈一百店 　江北店 　<span>添加分店</span></p>
+		</div>
+
+		<div class="pl">
+			<div class="tx">
+				<img src="images/t8.jpg" />
+			</div>
+            <div class="dhk">
+            	<h2>肉感少年_牟泽天　
+            	<span>提交于07-26日 13:55分</span>
+                </h2>
+                <p>我不是老板娘叫来的托,真的好吃,这家绝对是真爱,老板娘超级nice！！每次去都送好吃的.推荐他家是狮子头.可棒了.</p>
+            </div>
+            <div class="sj">	
+            </div>
+		</div>
+
+		<div class="org">
+			<ul>
+				<li>查看分店</li>
+				<li>添加评论</li>
+				<li>附近商家</li>
+			</ul>
+		</div>
+	</main>
+
+	<footer>
+		<ul>
+			<li><a href="#"><img src="images/d.jpg" /></a></li>
+			<li><a href="#"><img src="images/dh.jpg" /></a></li>
+			<li><a href="#"><img src="images/dd.jpg" /></a></li>
+			<li><a href="#"><img src="images/ddd.jpg" /></a></li>
+		</ul>
+	</footer>
+</body>
+</html>

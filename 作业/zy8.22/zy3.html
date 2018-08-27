@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/zy.css">
+</head>
+
+<body>
+    <div id="box">
+        <img src="images/img2 (1).jpg" id="pic" />
+        <div id="list">
+            <ul>
+                <li>天盛长歌: 陈坤倪妮博弈天下</li>
+                <li>延禧攻略: 璎珞开启争宠副本</li>
+                <li>新说唱: 潘帅紫琪命题难度报表</li>
+                <li>香蜜: 杨紫邓论演绎千年挚爱</li>
+                <li>好声音: 梁博卸用和声惊艳献唱</li>
+                <li>爱情进化论: 张若昀苦守张天爱</li>
+                <li>调香师: 小爱陈烨林兄弟情深</li>
+                <li>马奇诺防线: 解密超级防线的破灭</li>
+                <li>吴晓波:
+                    <十年二十人>之总结
+                </li>
+                <li>肆式青春: 中日携手打造青春物语</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var oPic = document.getElementById("pic"),
+            oLi = document.getElementsByTagName('li'),
+            oImg = ['img2 (1).jpg', 'img2 (9).jpg', 'img2 (4).jpg', 'img2 (2).jpg', 'img2 (5).jpg', 'img2 (6).jpg', 'img2 (8).jpg', 'img1.jpg', 'img2 (7).jpg', 'img2 (3).jpg'],
+            timer = null;
+        var a = 0;
+
+         if(timer){
+                clearInterval(timer);
+                timer=null;
+            } 
+
+        timer = setInterval(view, 2000);
+        function view() {
+            a++;
+            if (a == oLi.length) a = 0;
+            change(a);
+        }
+        function change(num) {
+            for (var j = 0; j < oLi.length; j++) {
+                oLi[j].style.color = "#E1DFDA";
+            }
+            oLi[num].style.color = '#21BF33';
+            oPic.src="images/"+oImg[num];
+        }
+
+        for (var i = 0; i < oLi.length; i++) {
+            oLi[i].index = i
+            oLi[i].onmouseover = function () {
+                change(this.index);
+                clearInterval(timer);
+            }
+            oLi[i].onmouseout = function () {
+                a=this.index;
+                timer=setInterval(view,2000);
+            }
+        }
+           
+
+
+    </script>
+</body>
+
+</html>

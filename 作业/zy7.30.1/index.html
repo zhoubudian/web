@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lrtk.css">
+    <style>
+        body{ background:#FFF;}
+        #header{ background:#000; height:79px; width:100%; border-bottom:1px solid #666; }
+        #header .logo{ width:81px; height:67px; float:left; background:url(images/logo1.jpg) no-repeat; margin-left:35px; margin-top:12px;}
+        #header .other{ height:79px; width:1200px; float:right;}
+        #header .other .navigation{ width:530px; height:47px; float:left; margin-top:32px;}
+        #header .other .navigation ul li{ width:106px; height:47px;  font-size:20px; font-weight:bold; line-height:47px; text-align:center; float:left; position:relative;}
+        #header .other .navigation ul li a{color:#FFF;}
+        #header .other .navigation ul li a:hover{ text-decoration:none;}
+        #header .other .navigation ul li ul{ width:106px; height:144px; position:absolute; left:0; top:47px; display:none; z-index:100;}
+        #header .other .navigation ul li ul li{ width:106px; height:47px; border-bottom:1px solid #999; background:#FFF;font-size:18px; font-weight:bold; line-height:47px; text-align:center;}
+        #header .other .navigation ul li ul li a{color:#000;}
+        #header .other .navigation ul li:hover ul{ display:block;}
+        #header .other .navigation ul li:hover a{ color:#999;}
+        #header .other .search{ height:79px; width:240px;  float:right; margin-right:30px;}
+        #header .other .search .top{ width:240px; height:33px;}
+        #header .other .search .top ul li{ font-size:14px; height:33px; line-height:33px; float:left;}
+        #header .other .search .top ul li.one{ border-right:1px solid #979797; width:72px;}
+        #header .other .search .top ul li.one a{ color:#FFF;}
+        #header .other .search .top ul li.two{ width:85px; margin-left:8px;}
+        #header .other .search .top ul li.two a{ color:#979797; float:left;}
+        #header .other .search .top ul li.two img{ padding-top:8px; padding-left:2px;}
+        #header .other .search .top ul li.three{ width:60px; margin-left:8px;}
+        #header .other .search .top ul li.three a{ color:#979797; float:left;}
+        #header .other .search .top ul li.three img{ padding-top:8px; padding-left:2px;}
+        #header .other .search .sear{ height:46px; width:240px; }
+        #header .other .search .sear input{ width:230px; height:32px; background:url(images/search.jpg) no-repeat; border:none; margin-top:3px; margin-left:40px; padding-left:30px;}
+
+        #banner{ margin-top:5px; overflow:hidden; position:relative; z-index:0;}
+
+        #content{ margin-top:10px;}
+        #content .center .all{ width:100%; height:600px; }
+        #content .center .all .left{ width:240px; height:600px; float:left;}
+        #content .center .all .left .a{ width:240px; height:230px;}
+        #content .center .all .left .b{ width:240px; height:360px; margin-top:10px; }
+        #content .center .all .left .b ul{ position:relative;}
+        #content .center .all .left .b ul li a.font{ width:240px; height:360px; position:absolute; background:rgba(0,0,0,.5); display:none; color:#FFF; font-size:32px; text-decoration:none; padding-top:100px; padding-left:90px;}
+        #content .center .all .left .b ul:hover li a.font{ display:block;}
+        #content .center .all .cente{ width:500px; height:600px;  margin-left:10px; float:left;}
+        #content .center .all .cente .c{ width:500px; height:340px; }
+        #content .center .all .cente .c ul{ position:relative;}
+        #content .center .all .cente .c ul li a.fonta{ width:500px; height:340px; background:rgba(0,0,0,.5); display:none; position:absolute; color:#FFF; font-size:32px; text-decoration:none; padding-top:160px; padding-left:195px;}
+        #content .center .all .cente .c ul:hover li a.fonta{ display:block;}
+        #content .center .all .cente .d { width:500px; height:250px; margin-top:10px;}
+        #content .center .all .cente .d .one{ width:245px; height:250px; float:left;}
+        #content .center .all .cente .d .one ul{ position:relative;}
+        #content .center .all .cente .d .one ul li a.fontd{ width:245px; height:250px; background:rgba(0,0,0,.5); display:none; position:absolute; color:#FFF; font-size:32px; padding-top:100px; padding-left:100px; text-decoration:none;}
+        #content .center .all .cente .d .one ul:hover li a.fontd{ display:block;}
+        #content .center .all .cente .d .two{ width:245px; height:250px; float:left; margin-left:10px;}
+        #content .center .all .cente .d .two ul{ position:relative;}
+        #content .center .all .cente .d .two ul li a.fontd{ width:245px; height:250px; background:rgba(0,0,0,.5); display:none; position:absolute; color:#FFF; font-size:32px; padding-top:100px; padding-left:100px; text-decoration:none;}
+        #content .center .all .cente .d .two ul:hover li a.fontd{ display:block;}
+        #content .center .all .right{ width:240px; height:600px; float:right; }
+        #content .center .all .right .e{ width:240px; height:360px;}
+        #content .center .all .right .e ul{ position:relative;}
+        #content .center .all .right .e ul li a.fonte{ width:240px; height:360px; background:rgba(0,0,0,.5); position:absolute; display:none; color:#FFF; text-decoration:none; font-size:32px; padding:150px 0 0 100px;}
+        #content .center .all .right .e ul:hover li a.fonte{ display:block;}
+        #content .center .all .right .f{ width:240px; height:230px; margin-top:10px;}
+        #content .center .month{ height:420px; width:100%;  margin-top:10px;overflow:hidden;}
+        #content .center .month .zi{ height:40px; width:100%; margin-top:20px; }
+        #content .center .month .zi li{ font-size:28px; color:#000; text-align:center; line-height:40px; font-weight:bold;}
+        #content .center .month .tu{ height:340px; width:100%; margin-top:20px;}
+        #content .center .month .tu ul li{ width:230px; height:300px; float:left; margin-left:17px; margin-top:5px; }
+        #content .center .month .tu ul li:hover{box-shadow:1px 1px 10px #999999; margin-top:1px;}
+
+        #footer{ height:90px; width:100%; background:#000;}
+        #footer .center .photo{ margin-left:20px;}
+        #footer .center .list{ height:250px; width:100%; }
+        #footer .center .list ul{ height:220px; width:200px;  float:left; margin-top:20px}
+        #footer .center .list ul li{ margin-top:10px;}
+        #footer .center .list ul li a{ font-size:16px; color:#333; text-decoration:none;}
+        #footer .center .list ul li.top a{ font-size:18px; font-weight:bold;}
+        #footer .center .list ul li a:hover{ color:#5E9DFD;}
+        #footer .center .list .erwei{ height:220px; width:200px;  float:right; margin-top:20px;}
+        #footer .center .list .erwei .zia{ width:100%; height:30px;  margin-top:10px;}
+        #footer .center .list .erwei .zia li{ font-size:18px; color:#000; font-weight:bold;}
+        #footer .center .list .erwei .wtu{ margin-top:10px; width:100%; height:170px;}
+        #footer .center .list .erwei .wtu .weib{ width:40px; height:40px; float:left;}
+        #footer .center .list .erwei .wtu .weix{ width:140px; height:140px; margin-left:10px; margin-left:10px; float:left;}
+        #footer .center .list .erwei .wtu .weix:hover img{ display:none;}
+        #footer .center .list .erwei .wtu .weix:hover{ background:url(images/erwei.png) no-repeat;}
+        #footer .fan{ height:95px; width:100%;}
+        #footer .fan .center{ background:#FFF;}
+        #footer .bottom{ height:35px; width:100%; background:#000;}
+    </style>
+</head>
+<body>
+<!--header beagin-->
+<div id="header">
+    <div class="logo">
+    </div>
+    <div class="other">
+        <div class="navigation">
+            <ul>
+                <li><a href="erjin.html">男子</a>
+                    <ul>
+                        <li><a href="#">鞋类</a></li>
+                        <li><a href="#">服饰类</a></li>
+                        <li><a href="#">运动分类</a></li>
+                    </ul>
+                </li>
+                <li><a href="erjig.html">女子</a>
+                    <ul>
+                        <li><a href="#">鞋类</a></li>
+                        <li><a href="#">服饰类</a></li>
+                        <li><a href="#">运动分类</a></li>
+                    </ul>
+                </li>
+                <li><a href="cnnr.html">童装</a></li>
+
+                <li><a href="erji.html">Eclare订制</a>
+                    <ul>
+                        <li><a href="#">男子订制</a></li>
+                        <li><a href="#">女子订制</a></li>
+                        <li><a href="#">儿童定制</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="search">
+            <div class="top">
+                <ul>
+                    <li class="one"><a href="#">邮件订阅</a></li>
+                    <li class="two"><a href="#">在线客服</a><img src="images/kefu.jpg" /></li>
+                    <li class="three"><a href="denglu.html">登录</a><img src="images/dlu.jpg" /></li>
+                </ul>
+            </div>
+            <div class="sear">
+                <form>
+                    <input  type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--header end-->
+
+<!--banner begin-->
+<div id="banner">
+    <div class="center">
+        <!-- 代码 开始 -->
+        <div class="container-fluid text-center">
+            <div class="header">
+                <img class="headerImg"
+                     src="images/header.jpg"
+                     data-slideshow='images/img1.jpg|images/img2.jpg|images/img3.jpg'>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.hammer-full.min.js"></script>
+        <script src="js/plugin.js"> </script>
+        <script src="js/lrtk.js"></script>
+        <script>
+            var links = ["http://www.lanrentuku.com", "http://www.lanrentuku.com/lanren/", "http://www.lanrentuku.com/js/biaoqian.html", "http://www.lanrentuku.com/js/xiangce.html"];
+            $(".slide").click(function(){
+                var index = $(this).attr('index');
+                if(index === undefined) {
+                    window.open(links[0]);
+                } else {
+                    window.open(links[(parseInt(index)+1)]);
+                }
+
+            });
+        </script>
+        <!-- 代码 结束 -->
+
+    </div>
+</div>
+<!--banner end-->
+
+<!--content beagin-->
+<div id="content">
+    <div class="center">
+        <div class="all">
+            <div class="left">
+                <div class="a"><a href="#"><img src="images/all.jpg" /></a></div>
+                <div class="b">
+                    <ul>
+                        <li><a href="#" class="font">鞋类</a></li>
+                        <li><img src="images/xie.png" /></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cente">
+                <div class="c">
+                    <ul>
+                        <li><a class="fonta" href="#">明星同款</a></li>
+                        <li><img src="images/b.png" /></li>
+                    </ul>
+                </div>
+                <div class="d">
+                    <div class="one">
+                        <ul>
+                            <li><a class="fontd" href="#">上衣</a></li>
+                            <li><img src="images/c.png" /></li>
+                        </ul>
+                    </div>
+                    <div class="two">
+                        <ul>
+                            <li><a class="fontd" href="#">下装</a></li>
+                            <li><img src="images/d.png" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="e">
+                    <ul>
+                        <li><a class="fonte" href="#">童装</a></li>
+                        <li><img src="images/e.png" /></li>
+                    </ul>
+                </div>
+                <div class="f">
+                    <a href="#"><img src="images/al.jpg" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="month">
+            <div class="zi">
+                <li>本月主打</li>
+            </div>
+            <div class="tu">
+                <ul>
+                    <li><a href="#"><img src="images/new1.png" /></a></li>
+                    <li><a href="#"><img src="images/new2.png" /></a></li>
+                    <li><a href="#"><img src="images/new3.png" /></a></li>
+                    <li><a href="#"><img src="images/new4.png" /></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--content end-->
+
+<!--footer beagin-->
+<div id="footer">
+    <div class="center">
+        <div class="photo">
+            <img src="images/g.png" />
+        </div>
+        <div class="list">
+            <ul>
+                <li class="top"><a href="#">产品</a></li>
+                <li><a href="#">鞋类</a></li>
+                <li><a href="#">服装</a></li>
+                <li><a href="#">配件</a></li>
+                <li><a href="#">新品上市</a></li>
+                <li><a href="#">折扣专区</a></li>
+            </ul>
+            <ul>
+                <li class="top"><a href="#">运动</a></li>
+                <li><a href="#">跑步</a></li>
+                <li><a href="#">训练</a></li>
+                <li><a href="#">足球</a></li>
+                <li><a href="#">篮球</a></li>
+                <li><a href="#">户外</a></li>
+            </ul>
+            <ul>
+                <li class="top"><a href="#">帮助中心</a></li>
+                <li><a href="#">尺码表</a></li>
+                <li><a href="#">会员</a></li>
+                <li><a href="#">门店查询</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">企业社会</a></li>
+            </ul>
+            <ul>
+                <li class="top"><a href="#">网站政策</a></li>
+                <li><a href="#">使用条款</a></li>
+                <li><a href="#">隐私声明</a></li>
+                <li><a href="#">物流配送</a></li>
+                <li><a href="#">退货规则</a></li>
+            </ul>
+            <div class="erwei">
+                <div class="zia">
+                    <li>关于我们</li>
+                </div>
+                <div class="wtu">
+                    <div class="weib">
+                        <img src="images/weib.png" />
+                    </div>
+                    <div class="weix">
+                        <img src="images/weix.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fan">
+        <div class="center"><img src="images/fanshi.png" /></div>
+    </div>
+    <div class="bottom">
+        <div class="center"><img src="images/bottom.png" /></div>
+    </div>
+</div>
+<!--footer end-->
+
+
+</body>
+</html>

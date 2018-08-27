@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       li{
+       	width: 100%;
+       	height: 40px;
+
+       }
+	</style>
+</head>
+<body>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+
+
+	<script>
+		var oLi=document.getElementsByTagName('li');
+		for(var i=0;i<oLi.length;i++){
+			if(i%2==0){
+               oLi[i].style.background='#ccc';
+			}else{
+               oLi[i].style.background='#0ff';
+			}
+		}
+	</script>
+</body>
+</html>

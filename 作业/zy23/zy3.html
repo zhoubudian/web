@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //编写程序，计算 1!+2!+3!+…..＋10！的结果。
+        var sum=0,
+            cf=1;
+        for(var i=1;i<=10;i++){
+            cf=1;
+            for(var j=1;j<=i;j++){
+               cf*=j;
+            }
+            sum+=cf
+        }
+        document.write(sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h2>成语接龙</h2>
+<input type="text">
+<button>添加</button>
+<p></p>
+<script>
+    var oInp=document.getElementsByTagName("input")[0];
+    var oBut=document.getElementsByTagName("button")[0];
+    var oP=document.getElementsByTagName("p")[0];
+    var text=['为所欲为'];
+    oP.innerHTML=text;
+    oBut.onclick=function () {
+        text.push(oInp.value);
+        oP.innerHTML=text;
+    }
+
+</script>
+
+</body>
+</html>

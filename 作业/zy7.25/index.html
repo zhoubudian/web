@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,div,ul,li{ margin: 0; padding:0;}
+        li{ list-style: none;}
+        a{ text-decoration: none;color: #000;}
+        #all{ width: 1260px; height: 440px; background:#f7f7f7; margin: 100px auto;
+            box-shadow: 0 0 10px #ccc;}
+        #all .left{ width:900px; height: 440px; float: left;}
+        #all .left .top{ width:100%; height: 60px; position: relative;}
+        #all .left .top .news{width: 140px; height: 60px; text-align: center;
+            line-height: 60px;font-size: 24px;font-weight: bold; }
+        #all .left .top .blue{ width: 750px; height: 2px;background: #6ccdee;position: absolute;
+            top:30px; left: 140px;}
+        #all .left .top .radius{ width: 38px; height: 23px;background:#6ccdee;border-radius: 10px;
+        position: absolute; top:20px; right: 8px; text-align: center;
+        line-height: 23px;}
+        #all .left .top .radius a{ color: #fff;font-size: 12px; text-decoration: none;}
+
+        #all .left .bottom{ width:100%; height: 380px; }
+        #all .left .bottom .one{width:100%; height: 180px; overflow: hidden;}
+        #all .left .bottom .one ul{ width:210px; height: 180px; background: #fff;
+            margin: 15px 0 0 13px;  float: left; transition: 0.5s;}
+        #all .left .bottom .one ul:hover{ transform: scale(1.1); transition: 0.5s;}
+        #all .left .bottom .one ul li{ line-height: 23px;}
+        #all .left .bottom .one ul li img{ margin: 3px 0 0 5px;}
+        #all .left .bottom .one ul .tit{ font-size:16px; margin-left: 12px; }
+        #all .left .bottom .one ul .des{font-size: 14px;color: #c2c2c2; margin-left: 12px;}
+
+        #all .right{ width: 360px; height: 410px;background: #ffffff;
+            float: right; margin-top:30px; }
+        #all .right .hot{ width:100%; height: 40px; position: relative;}
+        #all .right .hot .hzi{ width: 150px; height: 100%;text-align: center;
+        line-height: 40px; font-size: 20px;}
+        #all .right .hot .hblue{ width: 200px; height: 2px; background: #6ccdee; position: absolute;
+            top:20px; left:160px;}
+        #all .right .list{ width: 100%; height: 195px;}
+        #all .right .list ul{ width: 120px; height: 195px; float: left;}
+        #all .right .list ul li{ line-height: 28px; padding-left: 10px;}
+        #all .right .list ul li a{color: #7d7d7d; font-size: 16px;}
+        #all .right .list ul li:hover a{ color:#6ccdee; }
+        #all .right .pho{ width: 100%; height: 159px; }
+        #all .right .pho img{ margin-left:35px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+<div id="all">
+    <div class="left">
+        <div class="top">
+           <div class="news">
+               最新更新
+           </div>
+           <div class="blue">
+           </div>
+           <div class="radius">
+               <a href="#">更多</a>
+           </div>
+        </div>
+        <div class="bottom">
+            <div class="one">
+               <ul>
+                  <li><img src="images/1.jpg" alt=""></li>
+                  <li class="tit">创造101</li>
+                  <li class="des">第10期:总决赛11位选手最终</li>
+               </ul>
+                <ul>
+                    <li><img src="images/2.jpg" alt=""></li>
+                    <li class="tit">极限挑战第四季</li>
+                    <li class="des">第12期:男人帮荒岛冒险闯关</li>
+                </ul>
+                <ul>
+                    <li><img src="images/3.jpg" alt=""></li>
+                    <li class="tit">奔跑吧第二季</li>
+                    <li class="des">独家特辑:陈赫鹿晗爆笑套圈</li>
+                </ul>
+                <ul>
+                    <li><img src="images/4.jpg" alt=""></li>
+                    <li class="tit">我想和你唱第三季</li>
+                    <li class="des">第12期:林俊杰变狂热足球迷</li>
+                </ul>
+            </div>
+            <div class="one">
+                <ul>
+                    <li><img src="images/5.jpg" alt=""></li>
+                    <li class="tit">足球解说大会</li>
+                    <li class="des">总决赛来领六强</li>
+                </ul>
+                <ul>
+                    <li><img src="images/6.jpg" alt=""></li>
+                    <li class="tit">跨界歌王第三季</li>
+                    <li class="des">第11期:韩东君飙泪告白父亲</li>
+                </ul>
+                <ul>
+                    <li><img src="images/7.jpg" alt=""></li>
+                    <li class="tit">快乐大本营</li>
+                    <li class="des">林更新新馆上任遭赵又廷很怼</li>
+                </ul>
+                <ul>
+                    <li><img src="images/8.jpg" alt=""></li>
+                    <li class="tit">高能少年团第二季</li>
+                    <li class="des">第12期:王俊凯杨紫踢球</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+      <div class="hot">
+          <div class="hzi">
+              热门综艺检索
+          </div>
+          <div class="hblue"></div>
+      </div>
+      <div class="list">
+          <ul>
+              <li><a href="#">中国新相亲</a></li>
+              <li><a href="#">舌尖3</a></li>
+              <li><a href="#">欢乐中国人</a></li>
+              <li><a href="#">王牌对王牌</a></li>
+              <li><a href="#">非诚勿扰</a></li>
+              <li><a href="#">爱情保卫战</a></li>
+              <li><a href="#">青春旅社</a></li>
+          </ul>
+          <ul>
+              <li><a href="#">歌手</a></li>
+              <li><a href="#">声临其境</a></li>
+              <li><a href="#">如果爱4</a></li>
+              <li><a href="#">异口同声</a></li>
+              <li><a href="#">天籁之战2</a></li>
+              <li><a href="#">演员的诞生</a></li>
+              <li><a href="#">我们相爱吧</a></li>
+          </ul>
+          <ul>
+              <li><a href="#">声临其境</a></li>
+              <li><a href="#">快乐大本营</a></li>
+              <li><a href="#">二十四小时3</a></li>
+              <li><a href="#">天天向上</a></li>
+              <li><a href="#">开学第一课</a></li>
+              <li><a href="#">爸爸去哪儿5</a></li>
+              <li><a href="#">亲爱的客栈</a></li>
+          </ul>
+      </div>
+      <div class="pho">
+          <img src="images/9.jpg" alt="">
+      </div>
+    </div>
+</div>
+</body>
+</html>

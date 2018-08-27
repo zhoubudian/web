@@ -1,0 +1,53 @@
+*{
+	margin:0;
+	padding:0;
+}
+li{
+	list-style: none;
+}
+#wrap{
+	width: 100%;
+	height: 420px;
+	margin-top:50px;
+	position: relative;
+	overflow: hidden; 
+}
+
+#pic{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#pic li{
+	width: 100%;
+	height: 420px;
+}
+#pic img{
+	width: 100%;
+	height: 420px;
+}
+
+#list{
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+}
+
+#list li{
+	width: 40px;
+	height: 40px;
+	background: #DDDDDD;
+	float: left;
+	margin-left: 10px;
+	border:1px solid #94938F;
+	color: #94938F;
+	border-radius: 50%;
+	font-size: 1.2em;
+	text-align: center;
+	line-height: 40px;
+	cursor:pointer;
+}
+#list .on{
+	background: #899E9D;
+	color: #fff;
+}
