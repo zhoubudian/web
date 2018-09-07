@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            background: #0e141b;
+            color: rgba(224, 230, 235, 0.89);
+            text-align: center;
+            overflow: hidden;
+        }
+        .column,.colon{
+            font-size: 86px;
+            line-height: 86px;
+            display: inline-block;
+            vertical-align: top;
+            transform: translateY()
+        }
+        .colon:after{
+            content: ':';
+        }
+        .num{
+            opacity: 0.5;
+        }
+        .show{
+            opacity: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="column">
+        <div class="num">0</div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+    </div>
+    <div class="column">
+        <div class="num">0</div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+        <div class="num">6</div>
+        <div class="num">7</div>
+        <div class="num">8</div>
+        <div class="num">9</div>
+    </div>
+    <div class="colon"></div>
+    <div class="column">
+        <div class="num">0</div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+    </div>
+    <div class="column">
+        <div class="num">0</div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+        <div class="num">6</div>
+        <div class="num">7</div>
+        <div class="num">8</div>
+        <div class="num">9</div>
+    </div>
+    <div class="colon"></div>
+    <div class="column">
+        <div class="num">0</div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+    </div>
+    <div class="column">
+        <div class="num">0</div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+        <div class="num">6</div>
+        <div class="num">7</div>
+        <div class="num">8</div>
+        <div class="num">9</div>
+    </div>
+    <script>
+        'use strict';
+        var oColumn=document.getElementsByClassName('column')[5];
+        var wz=86;
+        var today=new Date();
+        var h=today.getHours(),
+            m=today.getMinutes(),
+            s=today.getSeconds();
+            jiazroe(m);
+            jiazroe(s);
+
+            function jiazroe(i) {
+                if(i<10) return i="0"+i;
+              }
+
+        //setInterval(tran,1000);
+        function tran(){
+            var jl=oColumn.offsetHeight-86;
+            if(wz>jl){
+             wz=0;
+            }
+            oColumn.style.transform='translateY(-'+wz+'px)' ;
+            wz+=86;
+        }
+    </script>
+</body>
+
+</html>

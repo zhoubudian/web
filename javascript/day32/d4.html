@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    //创建js类
+ function Game(name){
+     //bug;每new一个对象,就会产生一个堆内存,非常占用资源
+     this.say=function(){//方法  堆
+         console.log('h1,'+this.name);
+     }
+     this.name=name;//属性   栈
+ }
+ var p=new Game('plants vs zombile');
+ var p2=new Game('大吉大利,今晚吃鸡');
+ p.say();
+ p2.say();
+ /* 
+ 类与函数的区别
+ 1.相同:二者都使用function关键字,使函数调用时,二者没有区别,this也都指window
+ 2.不同:只当使用new调用时,function才被当成类使用,具备js类的特点:原型 ,同时this也指向被调用的对象
+  */
+</script>
+</body>
+
+</html>

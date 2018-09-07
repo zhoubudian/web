@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //继承:往往用于产品升级,即在原有的基础上增加新的功能
+
+        function Ak47() { //父类
+            this.name = "世界名枪,绑匪专用";
+            this.hobby = ['盲狙', '甩狙', '跳狙'];
+        }
+        function CS() { //子类
+
+        }
+        CS.prototype = new Ak47();//浅copy,创建一个_proto_指向父类
+
+        var a = new Ak47();
+        var c = new CS();
+        var c2 = new CS();
+        c.hobby.push("46神枪");
+      /* c2.hobby;    bug
+     ["盲狙", "甩狙", "跳狙", "46神枪"] */
+    </script>
+</body>
+
+</html>

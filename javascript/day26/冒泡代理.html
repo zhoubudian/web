@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">增加</button>
+    <ul id="nav">
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+    </ul>
+    <script>
+        var oLi = document.getElementsByTagName('li');
+        var oUl = document.getElementById('nav');
+        var oBtn = document.getElementById('btn');
+
+        //事件委托/事件代理的经典案例:为后生成元素的事件绑定问题,采用事件冒泡解决
+        oUl.addEventListener('click',function(e){
+            var target=e.target||window.event.srcElement;
+            console.log(target);
+        },false);
+        /*
+        bug  无法获取新增加的元素,添加事件
+         for(var i=0;i<oLi.length;i++){
+            oLi[i].onclick=function(){
+                console.log(this);
+            }
+        } */
+
+        oBtn.onclick = function () {
+            var aLi = document.createElement('li');
+            aLi.innerHTML = Math.random();
+            oUl.appendChild(aLi);
+        }
+    //   https://zhoubudian.github.io/hello-web/%E7%BD%91%E6%98%93%E4%B8%A5%E9%80%89/index.html
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //继承:往往用于产品升级,即在原有的基础上增加新的功能
+
+        function Ak47(name,hobby) { //父类
+            this.name = name;
+            this.hobby = hobby;
+        }
+        Ak47.prototype.play=function(){
+            console.log(this.name,this.hobby);
+        }
+        function CS(name,hobby) { //子类
+        //call()
+            //console.log(this);
+            Ak47.call(this,name,hobby);//继承2: 方法继承  改this的指向,让他指向子类CS()
+        }
+        CS.prototype = new Ak47();//继承1 :方法继承 浅copy,创建一个_proto_指向父类
+        CS.prototype.constructor=CS;//继承3:将构造函数改为子类CS
+
+        var a = new Ak47("皮卡丘",['盲狙', '甩狙', '跳狙']);
+        var c = new CS("世界名枪",['盲狙', '甩狙']);
+        var c2 = new CS("ES6",['盲狙']);
+        /* 
+        this:
+        当对象调用this时,this指向调用的对象(new obj)
+        当函数调用this时,this指向 window
+         */
+        c.hobby.push("46神枪");
+      /* 
+     c2.hobby;
+     ["盲狙", "甩狙", "跳狙"]
+     c.hobby;
+     ["盲狙", "甩狙", "跳狙", "46神枪"]
+       */
+
+       //JS继承原理:
+
+       //Object(根)[prototype]没有父级,Function()用于实现new功能
+       //四大分支:Array,String,Boolean,Number
+       //注意: root 和 四大分支都有自己的prototype;
+       /* 
+        _proto_ : 指示箭头(指针)
+       prototype: 事物(方法和属性)
+        */
+    </script>
+</body>
+
+</html>

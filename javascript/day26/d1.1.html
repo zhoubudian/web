@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #box {
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        ul {
+            width: 200px;
+        }
+
+        .menu {
+            font: 16px/32px '宋体';
+            background: #333333;
+            color: #fff;
+        }
+        .sub{
+            display: none;
+        }
+
+        .menu li {
+            background: #cccccc;
+            font: 14px/28px '宋体';
+            padding-left: 30px;
+            margin-left: 30px;
+            animation: myfirst 1s 1;
+            animation-fill-mode: forwards;
+            /* transition: 1s all; */
+        }
+
+        @keyframes myfirst {
+            /* 创建关键帧 (函数)*/
+            0% {
+                /* 从0开始 */
+                transform: translateX(0);
+            }
+            100% {
+                /* 到100%结束 */
+                transform: translateX(-60px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="box">
+        <li class="menu">管理区
+            <ul class="sub">
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+        <li class="menu">讨论区
+            <ul class="sub">
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        //getElementsByClassName有兼容性问题
+        var oMenu = document.getElementsByClassName('menu');
+        var oSub = document.getElementsByClassName('sub');
+
+        for (var i = 0; i < oMenu.length; i++) {
+            oMenu[i].index = i;
+            oMenu[i].bflag = false;
+            oMenu[i].onclick = function () {
+                if (this.bflag) {
+                    oSub[this.index].style.display = 'none';
+                    // this.bflag = false;
+                } else {
+                    oSub[this.index].style.display = 'block';
+                    // this.bflag = true;
+                }
+                this.bflag=!this.bflag;
+                /* 
+                console.log(this.bflag); */
+            }
+        }
+    </script>
+</body>
+
+</html>

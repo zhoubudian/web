@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+            top: 0px;
+        }
+        div:nth-child(2) {
+            width: 100px;
+            height: 100px;
+            background: #0f0;
+            position: absolute;
+            top:110px;
+        }
+        div:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: #00f;
+            position: absolute;
+            top: 220px;
+        }
+    </style>
+    <script src="js/drag.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var oDiv = document.getElementsByTagName('div');
+        drag(oDiv[0]);
+        drag(oDiv[1]);
+        drag(oDiv[2]);
+    </script>
+</body>
+
+</html>

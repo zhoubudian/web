@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    ul,li{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    #box{
+        margin: 30px auto;
+    }
+    ul{
+        width: 200px;
+    }
+    .menu{
+        font:16px/32px '宋体';
+        background: #333333;
+        color: #fff;
+    }
+    .menu li{
+        background: #cccccc;
+        font: 14px/28px '宋体';
+        padding-left: 30px;
+        margin-left: 30px;
+        transition: 1s all;
+    }
+    .menu li:hover{
+        transform: translateX(-60px);
+        transition: 1s all;
+    }
+    </style>
+</head>
+<body>
+   <ul id="box">
+       <li class="menu">管理区
+           <ul class="sub">
+               <li>001</li>
+               <li>002</li>
+               <li>003</li>
+           </ul>
+       </li>
+       <li class="menu">讨论区
+           <ul class="sub">
+               <li>001</li>
+               <li>002</li>
+               <li>003</li>
+           </ul>
+       </li>
+   </ul> 
+</body>
+</html>

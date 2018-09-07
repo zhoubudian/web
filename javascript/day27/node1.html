@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>管理区</h3>
+    <!-- kjhgfdfghjkl -->
+    <ul>
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+    </ul>
+
+    <!--   
+js将HTML每个标签称为node(节点),element(元素)
+文本节点包括回车 换行
+
+ -->
+    <script>    
+        var oH3 = document.getElementsByTagName('h3')[0];
+        var oUl = document.getElementsByTagName('ul')[0];
+
+
+        oUl.firstChild;//ul的长子
+        //#text
+        oUl.firstElementChild;
+        //<li>​001​</li>
+        oUl.lastElementChild;
+        //<li>​003​</li>​
+        oUl.lastChild;//ul最后的一个儿子
+        //#text
+    </script>
+</body>
+
+</html>

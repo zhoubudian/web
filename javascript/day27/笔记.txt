@@ -1,0 +1,7 @@
+四大内核浏览器在css3中的写法:
+1.火狐Firefox:-moz-
+2.谷歌Chrome/苹果Safari:-webkit-
+3.微软IE:-ms-
+4.欧朋Opera:-o-
+
+css动画

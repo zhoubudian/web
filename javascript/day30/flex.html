@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        width: 500px;
+        height: 150px;
+        margin: 10px;
+        border: 1px solid #000;
+        display: flex;
+    }
+    li{
+        background: #0ff;
+        list-style: none;
+        margin-left:5px; 
+    }
+    li:nth-child(1){
+        flex: 2 1 0;
+        align-self:stretch;
+    }
+    li:nth-child(2){
+        flex: 1 1 0;
+        background: #f00;
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>I am One</li>
+        <li>I am Two</li>
+    </ul>
+</body>
+</html>

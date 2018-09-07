@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,
+        li,
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #box {
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        ul {
+            width: 200px;
+        }
+
+        .menu {
+            font: 16px/32px '宋体';
+            background: #333333;
+            color: #fff;
+        }
+
+        .sub {
+            display: none;
+        }
+
+        .menu li {
+            background: #cccccc;
+            font: 14px/28px '宋体';
+            padding-left: 30px;
+            margin-left: 30px;
+            animation: myfirst 1s 1;
+            animation-fill-mode: forwards;
+            /* transition: 1s all; */
+        }
+
+        @keyframes myfirst {
+            /* 创建关键帧 (函数)*/
+            0% {
+                /* 从0开始 */
+                transform: translateX(0);
+            }
+            100% {
+                /* 到100%结束 */
+                transform: translateX(-60px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="box">
+        <li class="menu">
+            <h3>管理区</h3>
+            <ul class="sub">
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+        <li class="menu">
+            <h3>讨论区</h3>
+            <ul class="sub">
+                <li>004</li>
+                <li>005</li>
+                <li>006</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        //var oMenu = document.getElementsByClassName('menu');
+        var oH3 = document.getElementsByTagName('h3');
+
+        for (var i = 0; i < oH3.length; i++) {
+            oH3[i].onclick = function () {
+                var sub = next(this);
+                //var sub = this.nextElementSibling;
+                //console.log(this,sub);
+                if (sub.style.display == 'block') {
+                    sub.style.display = 'none';
+                } else {
+                    sub.style.display = 'block';
+                }
+            }
+        }
+
+        function next(elem) {//仿写nextElementSibling
+            do {
+                elem = elem.nextSibling;
+                //console.log(elem.nodeType, elem);
+            } while (elem && elem.nodeType != 1);//elem  判斷非法參數
+            return elem;
+        }
+    </script>
+</body>
+
+</html>

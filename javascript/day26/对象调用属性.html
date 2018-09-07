@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    obj={
+        name:'Jack',
+        age:20,
+        tel:123456789
+    }
+
+    //调用属性必须用[]的情况:key做为变量使用时,用[]
+    for(var key in obj){
+       // document.write(obj.key+'<br />');
+        document.write(obj[key]+'<br />');
+    }
+
+    //.和[]混用的情况  .用于对象属性直接调用
+    document.write(obj.name+' ');
+    document.write(obj['tel']);
+
+    //小结:对象的小标是变量时,只能用[]  而对象属性[]和 .都可以
+    </script>
+</body>
+</html>

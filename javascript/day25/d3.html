@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        oDiv = document.getElementById('box');
+        oDiv.onmousedown = function (e) {//点击鼠标左键
+            var e = e || window.event;
+            //1.块的当前位置:x0,y0
+            var x0 = this.offsetLeft,
+                y0 = this.offsetTop;
+            // console.log(this.offsetLeft, this.offsetTop);
+            //2.鼠标的当前位置(起点):x1,y1
+            var x1 = e.clientX,
+                y1 = e.clientY;
+            //console.log(e.clientX, e.clientY);
+
+            oDiv.onmousemove = function (e) {
+                var e = e || window.event;
+                //鼠标站点位置坐标:x2,y2
+                var x2 = e.clientX,
+                    y2 = e.clientY;
+                //console.log(e.clientX, e.clientY);
+
+                //块的站点坐标:x,y
+                var x = x0 + (x2 - x1),
+                    y = y0 + (y2 - y1);
+                    oDiv.style.left=x+'px';
+                    oDiv.style.top=y+'px';
+                console.log(x, y);
+            }
+        }
+//只有css中的position的left和top的值才能使移动,js中的各种距离offsetWidth,clientX只能读取
+    </script>
+</body>
+
+</html>

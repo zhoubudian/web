@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        oDiv = document.getElementById('box');
+        oDiv.onmousedown = function (e) {//点击鼠标左键
+            var e = e || window.event;
+            //1.块的当前位置:x0,y0
+            console.log(this);//div#box
+            var x0 = oDiv.offsetLeft,
+                y0 = oDiv.offsetTop;
+            // console.log(this.offsetLeft, this.offsetTop);
+            //2.鼠标的当前位置(起点):x1,y1
+            var x1 = e.clientX,
+                y1 = e.clientY;
+            //console.log(e.clientX, e.clientY);
+
+            document.onmousemove = function (e) {
+                var e = e || window.event;
+                //鼠标站点位置坐标:x2,y2
+                var x2 = e.clientX,
+                    y2 = e.clientY;
+                //console.log(e.clientX, e.clientY);
+
+                //块的有效活动范围  即可视区域(浏览器)的宽度和高度 clientHeight/Width 而offsetHeigh/Width是指自身的宽度和高度
+                var oWidth = oDiv.offsetWidth,
+                    oHeight = oDiv.offsetHeight;
+
+                var disX = document.documentElement.clientWidth - oWidth ||
+                    document.body.clientWidth - oWidth,
+                disY = document.documentElement.clientHeight - oHeight ||
+                        document.body.clientHeight - oHeight;
+
+                //块的终点坐标:x,y
+                var x = x0 + (x2 - x1),
+                    y = y0 + (y2 - y1);
+
+                if (x < 0) x = 0;//可视区域的左边
+                if (x > disX) x = disX;
+                if (y < 0) y = 0;//可视区域的上边
+                if (y > disY) y = disY;
+                //块动画
+                oDiv.style.left = x + 'px';
+                oDiv.style.top = y + 'px';
+                //console.log(x, y);
+            }
+            //结束鼠标拖拽
+            oDiv.onmouseup=function(){//当鼠标弹起来的时候不再移动
+                document.onmousemove=null;
+                document.onmouseup=null;
+            }
+            //return false;
+        }
+//只有css中的position的left和top的值才能使移动,js中的各种距离offsetWidth,clientX只能读取
+
+
+    </script>
+</body>
+
+</html>

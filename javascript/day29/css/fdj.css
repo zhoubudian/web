@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+#small{
+    width: 228px;
+    height: 228px;
+    float: left;
+}
+#small #drag{
+    width: 114px;
+    height: 114px;
+    background: rgba(192,188,176,.7);
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+#small #mask{
+    width:228px;
+    height: 228px;
+    background: rgba(255,0,0,0);
+    position: absolute;
+    top:0;
+    left: 0;
+}
+#big{
+    width: 228px;
+    height: 228px;
+    overflow: hidden;
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    display: none;
+}
+#big img{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+

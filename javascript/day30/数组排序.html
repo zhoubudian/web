@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function show(a, b) {
+            console.log(arguments);
+            console.log(arguments.length);//参数        
+            console.log(arguments[0], arguments[1]);//参数        
+            //在JavaScript中arguments是一个类似Array的存在,但他不能等同Array
+            //arguments.callee:ƒ show(a, b);引用函数自身,用于递归
+
+            //arguments对象不能显示的创建,它只有在函数
+        }
+        show(33, 345);
+    </script>
+</body>
+
+</html>

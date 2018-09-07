@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡</title>
+    <style>
+        div {
+            font: 40px/40px '黑体';
+            color: #fff;
+        }
+
+        #one {
+            width: 400px;
+            height: 200px;
+            background: #f00;
+        }
+
+        #two {
+            width: 200px;
+            height: 100px;
+            background: #ff0;
+        }
+
+        #in {
+            width: 100px;
+            height: 50px;
+            background: #00f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one">one
+        <div id="two">two
+            <div id="in">in</div>
+        </div>
+    </div>
+    <script>
+        var one = document.getElementById('one');
+        var two = document.getElementById('two');
+        var oIn = document.getElementById('in');
+
+        addEvent(one,'click',function(){
+            console.log('我用chrome');
+        });
+        //elem:dom对象
+        //type:事件类型
+        //handler:绑定函数
+        function addEvent(elem, type, handler) {
+            if (elem.addEventListener) {//W3C
+                elem.addEventListener(type,handler);
+            }else if (elem.attachEvent) {//IE
+                elem.attachEvent('on'+type,handler);
+            }else{
+                elem['on'+type]=handler;
+                //用于没有冒泡的事件   onblur onload 
+            }
+        }
+
+        /* one.addEventListener('click', function (e) {
+            alert('one');
+            e.stopPropagation();
+        }, false); 
+
+        one.attachEvent('onclick', function () {
+            alert('one');
+            window.event.cancelBubble = true;
+        });
+        */
+
+    </script>
+</body>
+
+</html>

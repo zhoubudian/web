@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //javascript中一切（引用类型）都是对象，对象是属性的集合==>一切的原型是Object
+
+        /* 
+        大师兄 七十二变 ==> 原形 猴子
+        例:Array,function,Object,new String(),new Number(),...==>原型 Object
+         */
+
+
+        //native code :本征代码指js中与生俱来的内容,不用创建,可直接使用.
+        /* 
+        Array;
+       ƒ Array() { [native code] }
+       Object;
+       ƒ Object() { [native code] }
+       Function;
+       ƒ Function() { [native code] }
+         */
+
+        //constructor(构造器) 属性返回对创建此对象的数组函数的引用。(初始化) 用于初始化和构造函数 
+        function Person(name, job) {//创建一个构造函数
+            this.name = name;//创建属性
+            this.job = job;
+        }
+        //prototype(显示原型):用于创建类的方法
+        //_proto_(隐士原型)
+        Person.prototype.show = function () {//构造器初始化属性
+            console.log(this.job, this.name);
+        }
+        var man = new Person('Amber', 'IT');
+        //man._proto_ === Person.prototype     true
+    </script>
+</body>
+
+</html>

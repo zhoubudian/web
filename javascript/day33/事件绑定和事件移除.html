@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: #0f0;
+            color: #fff;
+            font-size: 22px;
+        }
+
+        #con {
+            padding: 100px;
+            background: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">dad
+        <div id="son">son</div>
+    </div>
+    <script>
+        var oDad = document.getElementById("con");
+        var oSon = document.getElementById("son");
+
+        oSon.addEventListener('click',function () { 
+            console.log("儿砸捕获");
+         },true);
+        oSon.addEventListener('click',function () { 
+            console.log("儿砸冒泡");
+         },false);
+         
+
+         oDad.addEventListener('click',function () { 
+            console.log("捕获我是你爸爸");
+         },true);
+         oDad.addEventListener('click',function () { 
+            console.log("我是你爸爸");
+         },false);
+         
+    </script>
+</body>
+
+</html>

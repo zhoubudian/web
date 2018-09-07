@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+            top: 0px;
+        }
+        div:nth-child(2) {
+            width: 100px;
+            height: 100px;
+            background: #0f0;
+            position: absolute;
+            top:110px;
+        }
+        div:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: #00f;
+            position: absolute;
+            top: 220px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var oDiv = document.getElementsByTagName('div');
+        drag(oDiv[0]);
+        drag(oDiv[1]);
+        drag(oDiv[0]);
+
+        function drag(elem) {
+            elem.onmousedown = function (e) {
+                var e = e || window.event;
+
+                var x0 = elem.offsetLeft,
+                    y0 = elem.offsetTop;
+
+                var x1 = e.clientX,
+                    y1 = e.clientY;
+
+                document.onmousemove = function (e) {
+                    var e = e || window.event;
+
+                    var x2 = e.clientX,
+                        y2 = e.clientY;
+
+                    var oWidth = elem.offsetWidth,
+                        oHeight = elem.offsetHeight;
+
+                    var disX = document.documentElement.clientWidth - oWidth ||
+                        document.body.clientWidth - oWidth,
+                        disY = document.documentElement.clientHeight - oHeight ||
+                            document.body.clientHeight - oHeight;
+
+                    var x = x0 + (x2 - x1),
+                        y = y0 + (y2 - y1);
+
+                    if (x < 0) x = 0;
+                    if (x > disX) x = disX;
+                    if (y < 0) y = 0;
+                    if (y > disY) y = disY;
+                    elem.style.left = x + 'px';
+                    elem.style.top = y + 'px';
+                }
+                elem.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+                return false;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

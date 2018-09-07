@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //对象==>若干个属性的集合
+        var obj={
+            name:'Amber',//值类型
+            job:{//引用类型:对象
+                one:'猫的克星',
+                two:'鼠中精灵'
+            },
+            talk:function(){//引用类型:函数
+                alert("上天");
+            },
+            addr:['哈尔滨','大庆','大连']//引用类型:数组
+        }
+
+
+        //属性的调用方法
+        //obj.name;
+        //obj.talk();
+        //obj.job.one;
+        //obj.addr[0];
+    </script>
+</body>
+
+</html>

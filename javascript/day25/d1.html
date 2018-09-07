@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="msg">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+        <li>006</li>
+        <li>007</li>
+        <li>008</li>
+        <li>009</li>
+        <li>010</li>
+    </ul>
+    <script>
+        //事件的委托和代理问题
+        //利用事件冒泡把子元素的事件,统一委托给父元素去绑定
+        //事件冒泡解决的问题:很多子元素绑定
+        //事件源 e.target dom对象在调用事件时,事件源不一定是这个DOM对象
+        var oLi = document.getElementsByTagName('li'),
+            oMsg = document.getElementById('msg');
+        /* oMsg.onclick = function (e) {
+            console.log(e.target);
+        } */
+        //两种等同
+        oMsg.addEventListener('click', function (e) {
+            var target=e.target||window.event.srcElement;
+            console.log(target);
+        }, false);
+        /* for (var i = 0; i < oLi.length; i++) {
+            oLi[i].onclick = function () {
+                console.log(this);
+            }
+        } */
+    </script>
+</body>
+
+</html>

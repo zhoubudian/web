@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //dom元素的操作:增,删,改,查
+        //一.增加元素(创建元素)
+        var oH2 = document.createElement("h2");//创建元素于内存
+        oH2.innerHTML = '俺老孙来也';
+        document.body.appendChild(oH2);
+
+
+        //创建嵌套元素
+        var oUl = document.createElement('ul');
+        for (var i = 0; i < 10; i++) {
+            //createLi();
+            buildLi(i);
+        }
+
+        document.body.appendChild(oUl);
+
+        /* function createLi(){//创建一个无参函数
+            var oLi = document.createElement('li');
+            //var oLi=oUl.createElement('li');
+            oLi.innerHTML = "睡好,吃饱";
+            oUl.appendChild(oLi);//追加
+        } */
+
+        function buildLi(str){//创建一个有参函数
+            var oLi = document.createElement('li');
+            //var oLi=oUl.createElement('li');
+            oLi.innerHTML = str;
+            oUl.appendChild(oLi);//追加
+        }
+
+        //删除元素  removeChild();
+        var oLi=oUl.children;
+        //oUl.removeChild(oLi[oLi.length-1]);//删除最后一个元素
+
+        for(var i=0;i<oLi.length;i++){
+            oLi[i].onclick=function(){
+                oUl.removeChild(this);
+            }
+        }
+    </script>
+</body>
+
+</html>
