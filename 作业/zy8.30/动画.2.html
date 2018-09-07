@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            height: 98px;
+            width: 98px;
+            border: 1px solid #fff;
+            background: #000;
+            font: 40px/98px '宋体';
+            text-align: center;
+            color: #fff;
+        }
+
+        #box {
+            width: 500px;
+            height: 100px;
+            border: 5px solid #000;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #list {
+            position: absolute;
+            width: 200%;
+        }
+
+        #btn {
+            width: 100px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <div id="btn">
+        <button>向左</button>
+        <button>向右</button>
+    </div>
+
+    <script>
+        var oList = document.getElementById('list'),
+            oBtn = document.getElementsByTagName('button'),
+            oBox = document.getElementById('box'),
+            timer = null,
+            chang = -2;
+
+        var oLi = oList.children;
+
+        function move(speen) {
+            if (oList.offsetLeft < -oList.offsetWidth / 2) {
+                oList.style.left = "0";
+            }
+            if (oList.offsetLeft > 0) {
+                oList.style.left = -oList.offsetWidth / 2 + 'px';
+            }
+            oList.style.left = oList.offsetLeft + speen + 'px';
+        }
+        move(chang);
+        timer = setInterval(function(){move(chang)}, 30);
+        oBtn[0].onclick = function () {
+            chang = -2;
+        }
+
+        oBtn[1].onclick = function () {
+            chang = 2;
+        }
+    </script>
+</body>
+
+</html>

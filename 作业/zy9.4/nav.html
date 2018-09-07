@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>虾米音乐导航</title>
+  <style>
+    div,
+    ul,
+    li,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    #nav {
+      width: 100%;
+      height: 100px;
+      box-shadow: 5px 2px 5px #000;
+    }
+
+    #nav .top {
+      width: 100%;
+      height: 60px;
+      background: url("images/bg.jpg") repeat-x;
+    }
+
+    #nav .top .logo {
+      width: 200px;
+      height: 60px;
+      float: left;
+      margin-left: 130px;
+      background: url("images/logo.png") no-repeat 0 -60px;
+    }
+
+    #nav .top .logo:hover {
+      background: url("images/logo.png") no-repeat 0 0px;
+    }
+
+    #nav .top .other {
+      width: 925px;
+      height: 60px;
+      float: right;
+      margin-right: 80px;
+    }
+
+    #nav .top .other div:nth-child(1) {
+      width: 180px;
+      height: 60px;
+      float: left;
+    }
+
+    #nav .top .other div:nth-child(1) p {
+      width: 90px;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      float: left;
+    }
+
+    #nav .top .other div:nth-child(1) p a {
+      font-size: 20px;
+      color: #fff;
+      display: block;
+      text-shadow: 0px 0px 2px #999;
+    }
+
+    #nav .top .other div:nth-child(1) p:hover a {
+      background: url("images/bgb.jpg") repeat-x;
+    }
+
+    #nav .top .other div:nth-child(2) {
+      width: 240px;
+      height: 35px;
+      float: left;
+      margin: 11px 0 0 10px;
+      border-radius: 3px;
+    }
+
+    #nav .top .other div:nth-child(2) span {
+      border: 1px solid #F35E00;
+      border-right: none;
+      width: 58px;
+      height: 33px;
+      background: url(images/bg.jpg) repeat-x;
+      float: left;
+      font-size: 14px;
+      text-align: center;
+      line-height: 33px;
+      color: #fff;
+      text-shadow: 0px 0px 2px #999;
+    }
+
+    #nav .top .other div:nth-child(2) span:nth-child(1) {
+      border-radius: 5px 0 0 5px;
+    }
+
+    #nav .top .other div:nth-child(2) span:nth-child(4) {
+      border-right: 1px solid #F35E00;
+      border-radius: 0 5px 5px 0;
+    }
+
+    #nav .top .other div:nth-child(2) span:hover {
+      background: url(images/bgb.jpg) repeat-x;
+    }
+
+    #nav .top .other div:nth-child(3) {
+      width: 218px;
+      height: 28px;
+      float: left;
+      margin: 15px 0 0 10px;
+    }
+
+    #nav .top .other div:nth-child(3) input {
+      width: 188px;
+      height: 28px;
+      background: url(images/input.jpg) no-repeat;
+      border: none;
+      padding-left: 30px;
+    }
+
+    #nav .top .other div:nth-child(4) {
+      width: 59px;
+      height: 34px;
+      background: #DF5F05;
+      border: 1px solid #C84C03;
+      border-radius: 4px;
+      float: left;
+      margin: 10px 0 0 10px;
+      text-align: center;
+      line-height: 32px;
+      text-shadow: 0 0 2px #999;
+    }
+
+    #nav .top .other div:nth-child(4) a {
+      color: #fff;
+      font-size: 12px;
+    }
+
+    #nav .top .other div:nth-child(4):hover {
+      background: #d75309;
+    }
+
+    #nav .top .other div:nth-child(5) {
+      width: 124px;
+      height: 34px;
+      border: 1px solid #C84C03;
+      border-radius: 4px;
+      float: left;
+      background: #DF5F05;
+      margin: 10px 0 0 10px;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(1) {
+      width: 59px;
+      height: 34px;
+      border-right: 1px solid #C84C03;
+      float: left;
+      text-align: center;
+      line-height: 32px;
+      text-shadow: 0 0 2px #999;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(1):hover {
+      background: #d75309;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(1) a {
+      color: #fff;
+      font-size: 12px;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(2),
+    span:nth-child(3) {
+      float: left;
+      width: 30px;
+      height: 34px;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(2) {
+      border-right: 1px solid #C84C03;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(2) .wb {
+      width: 30px;
+      height: 34px;
+      background: url(images/header_thirdparty_icon.png) no-repeat -20px 7px;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(2):hover {
+      background: #d75309;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(3),
+    span:nth-child(3) {
+      float: left;
+      width: 30px;
+      height: 34px;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(3) .qq {
+      width: 30px;
+      height: 34px;
+      background: url(images/header_thirdparty_icon.png) no-repeat -45px 7px;
+    }
+
+    #nav .top .other div:nth-child(5) span:nth-child(3):hover {
+      background: #d75309;
+    }
+
+    #nav .xia {
+      width: 100%;
+      height: 31px;
+      background: url(images/bgx.jpg) repeat-x;
+    }
+
+    #nav .xia .left {
+      width: 400px;
+      height: 100%;
+      float: left;
+      margin-left: 170px;
+    }
+
+    #nav .xia .left ul li {
+      width: 66px;
+      height: 100%;
+      text-align: center;
+      line-height: 31px;
+      float: left;
+      text-shadow: 0 0 2px #fff;
+    }
+
+    #nav .xia .left ul li a {
+      color: #000;
+      font-size: 16px;
+    }
+
+    #nav .xia .left ul li:nth-child(6) a {
+      color: #fe7202;
+    }
+
+    #nav .xia .left ul li:hover a {
+      color: #fe7202;
+    }
+
+    #nav .xia .right {
+      width: 360px;
+      height: 100%;
+      float: right;
+      margin-right: 140px;
+    }
+
+    #nav .xia .right ul li {
+      width: 70px;
+      height: 100%;
+      float: left;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 31px;
+      padding-left: 20px;
+    }
+
+    #nav .xia .right ul li:nth-child(1) {
+      padding: 0;
+      width: 90px;
+    }
+
+    #nav .xia .right ul li:nth-child(1) div:nth-child(1) {
+      float: left;
+      width: 16px;
+      height: 15px;
+      background: url(images/m.jpg) no-repeat center center;
+      margin-top: 8px;
+      margin-right: 6px;
+    }
+
+    #nav .xia .right ul li:nth-child(1):hover {
+      color: #fa7a19;
+    }
+
+    #nav .xia .right ul li:nth-child(1):hover div:nth-child(1) {
+      background: url(images/header_icon.png) no-repeat -30px -76px;
+      ;
+    }
+
+    #nav .xia .right ul li:nth-child(2) {
+      background: url(images/header_icon.png) no-repeat -75px -44px;
+    }
+
+    #nav .xia .right ul li:nth-child(2):hover {
+      color: #fa7a19;
+      background: url(images/header_icon.png) no-repeat -75px -68px;
+    }
+
+    #nav .xia .right ul li:nth-child(3) {
+      padding: 0;
+      width: 90px;
+    }
+
+    #nav .xia .right ul li:nth-child(3) div:nth-child(1) {
+      float: left;
+      width: 16px;
+      height: 15px;
+      background: url(images/header_icon.png) no-repeat -30px -52px;
+      margin-top: 8px;
+      margin-right: 6px;
+    }
+
+    #nav .xia .right ul li:nth-child(3):hover {
+      color: #fa7a19;
+    }
+
+    #nav .xia .right ul li:nth-child(3):hover div:nth-child(1) {
+      background: url(images/header_icon.png) no-repeat -30px -76px
+    }
+
+    #nav .xia .right ul li:nth-child(4) {
+      padding: 0;
+      width: 90px;
+    }
+
+    #nav .xia .right ul li:nth-child(4) div:nth-child(1) {
+      float: left;
+      width: 16px;
+      height: 15px;
+      background: url(images/header_icon.png) no-repeat -51px -52px;
+      margin-top: 8px;
+      margin-right: 3px;
+    }
+
+    #nav .xia .right ul li:nth-child(4):hover {
+      color: #fa7a19;
+    }
+
+    #nav .xia .right ul li:nth-child(4):hover div:nth-child(1) {
+      background: url(images/header_icon.png) no-repeat -51px -76px
+    }
+
+    #reg {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .2);
+      z-index: 100;
+      display: none;
+    }
+
+    .close {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #000;
+      font: 50px/100px '宋体';
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #all {
+      width: 430px;
+      height: 330px;
+      margin: 100px auto;
+      background: #fff;
+      box-shadow: 2px 5px 5px #ccc;
+      animation-name: move;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      overflow: hidden;
+      /* animation: move 2s 1; */
+    }
+
+    @keyframes move {
+      0% {
+        height: 0;
+      }
+      100% {
+        height: 330px
+      }
+    }
+
+    @keyframes moveo {
+      0% {
+        height: 330px;
+      }
+      100% {
+        height: 0;
+      }
+    }
+
+
+    .top {
+      width: 100%;
+      height: 160px;
+    }
+
+    .top img {
+      width: 100%;
+      height: 160px;
+    }
+
+    .bottom {
+      width: 100%;
+      height: 170px;
+    }
+
+    .uName {
+      height: 50px;
+      width: 100%;
+      margin-left: 130px;
+      line-height: 50px;
+    }
+
+    .uName input {
+      height: 30px;
+      border: none;
+    }
+
+    .uName span {
+      font-size: 14px;
+    }
+
+    .password {
+      height: 50px;
+      width: 100%;
+      margin-left: 130px;
+      line-height: 50px;
+    }
+
+    .password input {
+      height: 30px;
+      border: none;
+    }
+
+    .password span {
+      font-size: 14px;
+    }
+
+    .btn {
+      width: 240px;
+      margin: 20px auto;
+      height: 30px;
+    }
+
+    .btn input {
+      width: 240px;
+      height: 30px;
+      background: #0AC1FE;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    #register {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="nav">
+    <div class="top">
+      <div class="logo"></div>
+      <div class="other">
+        <div>
+          <p><a href="#">发现音乐</a></p>
+          <p><a href="#">我的音乐</a></p>
+        </div>
+        <div>
+          <span>歌单</span>
+          <span>电台</span>
+          <span>音乐人</span>
+          <span>客户端</span>
+        </div>
+        <div>
+          <form>
+            <input type="text" placeholder="音乐搜索，找人">
+          </form>
+        </div>
+        <div>
+          <a id="register">免费注册</a>
+        </div>
+        <div>
+          <span><a href="#">立即注册</a></span>
+          <span><div class="wb"></div></span>
+          <span><div class="qq"></div></span>
+        </div>
+      </div>
+    </div>
+    <div class="xia">
+      <div class="left">
+        <ul>
+          <li><a href="#">热卖</a></li>
+          <li><a href="#">排行榜</a></li>
+          <li><a href="#">专辑</a></li>
+          <li><a href="#">艺人</a></li>
+          <li><a href="#">风格</a></li>
+          <li><a href="#">寻光计划</a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <ul>
+          <li>
+            <div></div>兑换码
+          </li>
+          <li>vip会员</li>
+          <li>
+            <div></div>最近播放
+          </li>
+          <li>
+            <div></div>下载客户端
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="reg">
+    <div class="close">X</div>
+    <div id="all">
+      <div class="top">
+        <img src="images/qq1.png" />
+      </div>
+
+      <div class="bottom">
+        <div class="uName">
+          用户名:
+          <input type="text" placeholder="请输入用户名" id="inp">
+        </div>
+
+
+        <div class="password">
+          手机号:
+          <input type="text" placeholder="请输入手机号" id="pass">
+        </div>
+
+
+        <div class="btn">
+          <input type="submit" value="注册" id="zc">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+    var oClose = document.getElementsByClassName('close')[0],
+      oRe = document.getElementById('reg'),
+      oReg = document.getElementById('register'),
+      oAll = document.getElementById('all');
+
+    oReg.onclick = function () {
+      oAll.style.animationName = "move";
+      oRe.style.display = 'block';
+    }
+    oClose.onclick = function () {
+      oAll.style.animationName = "moveo";
+      setTimeout(gb, 2010)
+      function gb() {
+        oRe.style.display = 'none';
+      }
+
+    }
+
+
+
+  </script>
+</body>
+
+</html>

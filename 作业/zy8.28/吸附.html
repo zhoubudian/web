@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        var oDiv = document.getElementById('box');
+
+        oDiv.addEventListener('mousedown', movea, false);
+
+        function movea(e) {
+            var e = e || window.event;
+
+            var x0 = oDiv.offsetLeft,
+                y0 = oDiv.offsetTop;
+            //console.log(x0, y0);
+
+            var x1 = e.clientX,
+                y1 = e.clientY;
+            //console.log(x1,y1);
+
+            document.onmousemove = function (e) {
+                var e = e || window.event;
+
+                var x2 = e.clientX,
+                    y2 = e.clientY;
+                //console.log(x2,y2);    
+
+                var x = x0 + (x2 - x1),
+                    y = y0 + (y2 - y1);
+
+                var oWidth = oDiv.offsetWidth,
+                    oHeight = oDiv.offsetHeight;
+
+                var disX = document.documentElement.clientWidth - oWidth ||
+                    document.body.clientWidth - oWidth,
+                    disY = document.documentElement.clientHeight - oHeight ||
+                        document.body.clientHeight - oHeight;
+
+                if (x < 40) x = 0;
+                if (x > disX-40) x = disX;
+                if (y < 40) y = 0;
+                if (y > disY-40) y = disY;
+
+                oDiv.style.left = x + 'px';
+                oDiv.style.top = y + 'px';
+            }
+            oDiv.onmouseup=function(){
+                document.onmousemove=null;
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

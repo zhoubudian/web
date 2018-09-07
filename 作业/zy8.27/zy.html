@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        dl {
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        dt {
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            font: 14px/30px '黑体';
+            color: coral;
+        }
+
+        dt {
+            background: rgb(56, 56, 56);
+            border-bottom: 1px solid #000;
+        }
+
+        dd {
+            background: #fff;
+            display: none;
+        }
+
+        li {
+            list-style: none;
+            height: 30px;
+            width: 100px;
+            text-align: center;
+            font: 14px/30px '黑体';
+            color: coral;
+        }
+
+        li:hover {
+            background: wheat;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <dl>
+            <dt>外列表1</dt>
+            <dd>
+                <li>内部列表1</li>
+                <li>内部列表2</li>
+                <li>内部列表3</li>
+            </dd>
+        </dl>
+        <dl>
+            <dt>外列表2</dt>
+            <dd>
+                <li>内部列表1</li>
+                <li>内部列表2</li>
+                <li>内部列表3</li>
+            </dd>
+        </dl>
+    </div>
+
+    <script>
+        var oDt = document.getElementsByTagName('dt'),
+            oDd = document.getElementsByTagName('dd'),
+            bool = true;
+        for (var i = 0; i < oDt.length; i++) {
+            oDt[i].index = i;
+            oDt[i].onclick = function () {
+                swi(this.index);
+                bool = !bool;
+            }
+        }
+
+        function swi(n) {
+            if (bool) {
+                oDd[n].style.display = 'block';
+            } else {
+                oDd[n].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
