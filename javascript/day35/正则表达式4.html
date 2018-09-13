@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    购买数量<input type="text"> <span>至少输入四位数字</span>
+    <h2></h2>
+<script>
+//元字符:指的是正则表达式中的一个字符,也指字符串中的一个字符
+  /* 6.限定字符 
+        * 匹配前面的子表达式零次或多次
+        + 匹配前面的子表达式一次或多次
+        ? 匹配前面的子表达式零次或一次
+        {n} 匹配确定的 n 次
+        {n,} 至少匹配n 次
+        {n,m} 最少匹配 n 次且最多匹配 m 次
+   */
+   var oInp = document.getElementsByTagName('input')[0];
+   var oH2 = document.getElementsByTagName('h2')[0];
+   //var reg = /^\d+$/;//不要加g。g是全局匹配，加上g会在第二次执行test()时从上一次匹配的结束位置开始查找
+   //var reg = /s\w+\d/g;//s加上任意一个或多个字符并以数字结尾
+   //var reg = /^\w{4}$/;//必须四位
+   //var reg = /^\w{4,}$/;//至少四位
+   var reg = /^\w{2,6}$/;//至少两位 至多六位
+   var str = "";
+
+   oInp.onkeyup=function(){
+       str = oInp.value;
+       if(reg.test(str)){
+            oH2.innerHTML = str;
+       }else{
+           oH2.innerHTML = '输入不正确';
+       }
+      
+   }
+</script>
+</body>
+</html>

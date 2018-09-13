@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移除</title>
+</head>
+
+<body>
+    <button>click me</button>
+    <script>
+        var oBtn = document.getElementsByTagName('button')[0];
+        //解决bug:创建一个公用的函数
+
+
+        function addEvent(elem, type, handler) {
+            if (elem.addEventListener) {
+                elem.addEventListener(type, handler);
+            } else if (elem.attachEvent) {
+                elem[type+handler] = function () { 
+                    handler.call(elem);
+                 };
+                 elem.attachEvent('on'+type,elem[type+handler]);
+            }
+        }
+
+        function removeEvent(elem, type, handler) {
+            if (elem.removeEventListener) {
+                elem.removeEventListener(type, handler);
+            } else if (elem.detachEvent) {
+                elem.detachEvent("on" + type, elem[type+handler]);
+            }
+        }
+
+        function fn() {
+            alert("绑定");
+        }
+
+        function fn1() {
+            alert("绑定1");
+        }
+
+        //绑定多个事件
+        addEvent(oBtn, 'click', fn);
+        addEvent(oBtn, 'click', fn1);
+
+        removeEvent(oBtn, 'click', fn);
+        removeEvent(oBtn, 'click', fn1);
+    </script>
+</body>
+
+</html>

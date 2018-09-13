@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    购买数量<input type="text"> <span>至少输入四位数字</span>
+    <h2></h2>
+<script>
+//元字符:指的是正则表达式中的一个字符,也指字符串中的一个字符
+  /* 7.  
+         . :除(换行\n 回车\r)之外的任意一个单个字符(包含特殊符号!@#$%^&*()-+=)
+         [xyz]:字符集合。匹配所包含的任意一个字符。
+         [a-z]:字符范围。匹配指定范围内的任意小写字符。
+   */
+   var oInp = document.getElementsByTagName('input')[0];
+   var oH2 = document.getElementsByTagName('h2')[0];
+   
+   //var reg = /^\w{2,6}$/;//至少两位 至多六位
+   //var reg = /^.{2,6}$/;
+   //var reg = /h[a-z]d/;
+   //var reg = /h[^a-z]d/;//^在[]里面代表非  在正则表达式中代表开始位置
+   //var reg = /unit [1-9][0-9]*/;//unit 1~n;
+   var reg = /^unit [1-9][0-9]?$/;//unit 1~99
+   var str = "";
+
+   oInp.onkeyup=function(){
+       str = oInp.value;
+       if(reg.test(str)){
+            oH2.innerHTML = str;
+       }else{
+           oH2.innerHTML = '输入不正确';
+       }
+      
+   }
+</script>
+</body>
+</html>

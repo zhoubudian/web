@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <h2></h2>
+    <script>
+        //贪婪模式
+        /*  .*:贪婪模式:无法过滤掉任何字符串一切都是合法的 
+        
+         */
+        var oInp = document.getElementsByTagName('input')[0];
+        var oH2 = document.getElementsByTagName('h2')[0];
+
+        //var reg = /\d.*/g;
+       // var reg = /.*/g;//匹配整个字符串
+        //var reg =  /.*?/g;//非贪婪模式
+        //var str = "1.2.3.45678 yesr 华盛顿好按计划大,阿里山的空间阿卡"; 
+
+        var str = "aa<div>test1</div>bb<div>test2</div>cc";
+        //oInp.value = str;
+        //var reg = /<div>.*<\/div>/g;//贪婪 str.match(reg);["<div>test1</div>bb<div>test2</div>"]
+        //var reg = /<div>.*?<\/div>/g;//非贪婪  str.match(reg);(2) ["<div>test1</div>", "<div>test2</div>"]
+
+        //非贪婪模式的经典
+        var reg = /<.*?>/g ;//过滤掉所有HTML标签   
+
+        oInp.onblur=function(){
+            if(reg.test(oInp.value)){//判断是否为HTML标签
+                oH2.innerHTML = oInp.value.replace(reg,"&nbsp;");
+            }
+        }
+    </script>
+</body>
+
+</html>

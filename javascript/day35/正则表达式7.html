@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <h2></h2>
+    <script>
+        
+        var oInp = document.getElementsByTagName('input')[0];
+        var oH2 = document.getElementsByTagName('h2')[0];
+         
+         //小数点后最多两位
+        //var reg = /^[1-9]+\.\d{1,2}$/g ;   
+        //var reg = /^([1-9][0-9]*)+(\.\d{1,2})$/g ;
+
+        //密码长度4-10位英文和数字||4-10位(可以有特殊符号)   
+        var reg = /^[a-zA-Z\d]{4,10}$/g;
+
+        //只输入可打印字符,不能有特殊字符^[\u4E00-\u9FA5A-Za-z0-9_]+$
+
+        oInp.onkeyup=function(){
+            if(reg.test(oInp.value)){//判断是否为HTML标签
+                oH2.innerHTML = oInp.value;
+            }
+        }
+    </script>
+</body>
+
+</html>

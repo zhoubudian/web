@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div#canvas-frame {
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            height: 600px;
+            background: #EEEEEE;
+        }
+    </style>
+
+</head>
+<body>
+<div id="canvas-frame"></div>
+<script src="three.js-master/build/three.js"></script>
+<script>
+    var stats = new Stats();
+    stats.setMode(1); // 0: fps, 1: ms
+    // 将stats的界面对应左上角
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild( stats.domElement );
+    setInterval( function () {
+        stats.begin();
+        // 你的每一帧的代码
+        stats.end();
+    }, 1000 / 60 );
+</script>
+</body>
+</html>

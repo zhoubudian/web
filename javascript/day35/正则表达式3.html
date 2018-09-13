@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//元字符:指的是正则表达式中的一个字符,也指字符串中的一个字符
+  
+/* 1. \d d==>digital  匹配一个数字字符。等价于 [0-9]
+      \D 匹配一个非数字字符。等价于 [^0-9] */
+var str = 'go 45\\w zoo 123 hook _89 (shoot)';
+//var reg = /\d/g;
+//var reg = /\D/g;
+
+/*  2.\s 匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。
+      \S 匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。
+*/
+var reg = /\s/g;
+//var reg = /\S/g;
+
+/* 正则实现trim()功能  trim()删除字符串开始和末尾的空格
+
+function myTrim(s){var r = /^\s+|\s+$/g; return s.replace(r,',');}
+undefined
+console.log(myTrim("    abcd   "));
+VM195:1 ,abcd, */
+
+/* 3. \w  匹配字母、数字、下划线。等价于'[A-Za-z0-9_]'
+     \W   匹配非字母、数字、下划线。等价于 '[^A-Za-z0-9_]'。
+*/
+//var reg = /\w/g;
+//var reg = /\W/g;
+
+/*  4. \ 转义字符
+*/
+//var reg = /\\w/g;//go 45, zoo 123 hook _89 (shoot)
+
+/* 5.^以那(几)个字符开始 $匹配字符串结束位置
+   同时使用是必须以^开始  以$结束
+*/
+//var str1 = "Awow what what wow";
+//var reg = /^wow/g;//字符串必须以wow开头
+//var reg = /wow$/g;//字符串必须以wow结尾
+
+//var str = '88';
+//var reg = /^\d\d$/g;//只能输入两位数的数字
+var res = str.replace(reg,',');
+</script>
+</body>
+</html>

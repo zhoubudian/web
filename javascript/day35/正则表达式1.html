@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var str = "一个傻瓜自称傻瓜的浪漫生活,到处都是高级蠢货和笨蛋"; 
+var ste1 = '你愁啥';
+var reg = new RegExp("傻瓜|蠢货|笨蛋","g");//g=>globol查找这个字符串
+
+
+//正则中常用的字符串函数
+//1.replace(正则表达式,替换);
+var res=str.replace(reg,'**');
+//"一个自称**的浪漫生活"
+
+//2.match()正则匹配,结果为数组
+str.match(reg);
+//(4) ["傻瓜", "傻瓜", "蠢货", "笨蛋"]
+str.match(reg).length;
+//4
+
+//3.test():查询是否有符合正则表达式的内容,返回布尔值:true 有,false 无  
+//语法 : 正则在前 字符串在后
+reg.test(str);
+//true
+reg.test(ste1);
+//false
+
+//4.exec()查询与正则匹配的子串的位置,每执行一次,向下统计一次
+var res=reg.exec(str);
+//["傻瓜", index: 2, input: "一个傻瓜自称傻瓜的浪漫生活,到处都是高级蠢货和笨蛋", groups: undefined]
+/*
+res[0];
+"傻瓜"
+res.input;;
+"一个傻瓜自称傻瓜的浪漫生活,到处都是高级蠢货和笨蛋"
+res.index;
+2
+*/
+
+reg.exec(str);
+//["傻瓜", index: 6, input: "一个傻瓜自称傻瓜的浪漫生活,到处都是高级蠢货和笨蛋", groups: undefined]
+
+
+</script>
+</body>
+</html>

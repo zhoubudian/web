@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<script src="js/wow.min.js"></script>
+	<script>
+		window.onload=function(){
+			new WOW().init();//初始化
+		}
+	</script>
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        border: 10px ridge #0ff;
+        margin:10px auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wow slideInLeft"></div>
+    <div class="wow rollIn"></div>
+    <div class="wow wow flipInY" data-wow-duration="2s" data-wow-delay="2s" data-wow-offset="200"  data-wow-iteration="1"></div>
+    <!-- 类名前面的wow是每一个带动画的元素都要加的，slideInLeft就是说明动画样式。后面的data-wow-duration（动画持续时间）、data-wow-delay（动画延迟时间）、data-wow-offset（元素的位置露出后距离底部多少像素执行）和data-wow-iteration（动画执行次数）这四个属性可选可不选。 -->
+</body>
+
+</html>

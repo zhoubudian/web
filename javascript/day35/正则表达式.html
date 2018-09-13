@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var str = "一个自称傻瓜的浪漫生活,到处都是高级蠢货和笨蛋"; 
+var reg = new RegExp("傻瓜|蠢货|笨蛋","g");//g=>globol查找整个字符串
+
+
+//replace(搜索,替换);
+str.replace('浪漫','悲剧');
+//"一个自称傻瓜的悲剧生活"
+
+//replace(正则表达式,替换);
+var res=str.replace(reg,'**');
+//"一个自称**的浪漫生活"
+</script>
+</body>
+</html>

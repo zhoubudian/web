@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <button>确定</button>
+
+    <h1>显示输入内容</h1>
+<script>
+var oInput = document.getElementById('inp');
+var oBtn = document.getElementsByTagName('button')[0];
+var oH1 = document.getElementsByTagName('h1')[0];
+//var str="";
+//var reg = new RegExp("傻子|蠢货|山炮|二货","g");
+var reg = /傻子|蠢货|山炮|二货/g;
+//oBtn.onclick=function(){
+oInput.onkeyup=function(){
+    //console.log(oInput.value);
+    var str = oInput.value;
+    var res=str.replace(reg,"**");
+    oH1.innerHTML = res;
+}
+</script>
+</body>
+</html>
