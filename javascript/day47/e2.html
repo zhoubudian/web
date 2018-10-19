@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* function test() {
+        var n = 4399;//栈
+        function add() {//堆
+            n++;
+            console.log(n);
+        }
+        console.log('外'+n);
+        return {
+            n: n,
+            add: add
+        }
+    }
+    var a = test();
+   // var b = a;//浅拷贝
+  var c = test();
+    a.add();
+    a.add();
+    console.log(a.n);
+    c.add(); */
+        
+    var obj = {
+        m: 10
+    };
+    var obj2 = obj;
+    /* obj={
+        m:10,
+        a:{
+            n:20
+        }
+    } */
+    obj.a = obj2 = {
+        n: 20
+    };
+    //alert(obj.a);
+    console.log(obj.a);
+    alert(obj.m);
+    </script>
+</body>
+</html>

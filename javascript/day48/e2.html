@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+
+    <script>
+       /* var oDiv1 = document.getElementsByTagName("div");
+       var oDiv2 = document.querySelectorAll("div"); */
+
+       /* let arr1 = [...oDiv1];
+       let arr2 = [...oDiv2];  */
+
+      /*  let [div1,div2,div3] = oDiv2;
+       console.log(div1,div2,div3);
+
+       let arr=[];
+       for(let i=0; i<oDiv1.length;i++){
+           arr.push(oDiv1[i]);
+       }
+       console.log(arr); */
+
+       function foo(a, b, ...args){
+           console.log(a);
+           console.log(b);
+           console.log(args);
+           //console.log(a);
+       }
+
+       foo(1,2,3,4,5,6,7,8,);
+    </script>
+</body>
+
+</html>

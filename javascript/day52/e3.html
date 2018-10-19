@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Symbol
+        let a = Symbol();
+        let b = Symbol("Amber");
+        // console.log(a,b);
+        // console.log(typeof Symbol("Amber"));
+
+        //console.log(Symbol()===Symbol());
+        //console.log(Symbol("Amber")===Symbol("Amber"));
+
+        //let c = new Symbol();
+
+        /* let d = Symbol();
+        d.name = 'Amber';
+        console.log(d.name); */
+        //console.log(Symbol("Amber")+"Hello")
+
+        /* let tel = Symbol();
+        let obj4 = {
+            name:"Amb",
+            [tel]:12345678
+        }
+        console.log(obj4[tel]); */
+
+        /* let name = Symbol();
+        let obj7 = {};
+        obj7[name] = 'kry'; */
+
+        /*var obj = {};
+        Object.defineProperty(obj,name,{value:'Alice'});*/
+
+        //const log = {};
+
+        const log={
+            DEBUG: Symbol('debug'),
+            INFO: Symbol('info'),
+            WARN: Symbol('warn')
+        };
+        console.log(log.DEBUG, 'debug message');
+        console.log(log.INFO, 'info message');
+        
+    </script>
+</body>
+
+</html>

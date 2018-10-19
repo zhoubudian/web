@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+         /* let pro = new Proxy({
+          name:"zhao",
+          age:12
+      },{
+          get:(target,key,property)=>{
+              console.log('get');
+              //console.log(target);
+              return target[key];
+          },
+          set:(target,key,value,receiver)=>{
+              console.log('set');
+             // console.log(target);
+              //console.log(value);
+              return target[key] = value;
+          }
+      });
+      pro.name="zhang";//修改是通过set
+      console.log(pro.name);//获取是通过get
+      console.log(pro); */
+
+        let target = () => {
+            console.log("target fn");
+        }
+
+        let handler = {
+            apply(target,ctx,args){
+                console.log('apply');
+                return Reflect.apply(...arguments);
+            }
+        }
+
+        let pro1 = new Proxy(target,handler);
+        pro1();
+
+        
+    </script>
+</body>
+
+</html>

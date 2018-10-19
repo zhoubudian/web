@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+
+    <script>
+        /* 
+        //类数组 转换为真正的数
+        let oDiv = document.querySelectorAll("div");
+      [div1, div2, div3, div4] = [...oDiv];
+      let arr = [...oDiv];
+      let arr1 = Array.from(oDiv);
+      let arr2 = [].slice.call(obj);
+      let arr3 = Array.prototype.slice.call(obj); */
+
+
+        /* 
+        //类方法:Array.of() 将一组值 转换为数值
+        let arr4 = Array.of(2,3,4,"Amber",{"name":1,"age":2},[9,10]);
+        //  [2, 3, 4, "Amber", {…}, Array(2)]
+*/
+        //数组内部替换:copyWithin(target,start,end)
+        /* arr.copyWithin(target,start=0,end) 
+        target(必需):从该位置开始替换数据.
+        start(可选):从该位置开始读取数据,默认为0,如果为负值,表示倒数.
+        end(可选):到该位置前停止读取数据,默认等于数组长度.如果为负值,表示倒数.
+        */
+        /* let arr5 = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        console.log(arr5.copyWithin(1,5,8)); 
+        //[0,5,6,7,4,5,6,7,8]
+         */
+
+        /* let arr6 = [1,2,3,4,5,6,7,8]
+        arr6.find(function (val,key,arr) { 
+            if(val>5){
+                console.log(key,val);
+            }
+         });
+        let a = arr6.find(function (val,key,arr) { 
+            if(val>5){
+                return val
+            }
+         });
+         console.log(a); */
+
+        //arr.fill('fill内容',[start],[end]);多用于初始化数组内容
+        /* let arr = [13,488,2,77,16];
+        arr.fill('yes',1,3);// [13, "yes", "yes", 77, 16]
+        let aa = new Array(4).fill('A');
+        let aa1 = new Array(6).fill(arr); */
+
+        //arr.includes()数值是否包含给定的值
+       /*  let inc = [13,2,66,7,4,16];
+        let r1 = inc.includes(666);//false
+        let r1 = inc.includes(66);//true */
+
+
+        //3.forEach 重点掌握
+        /* let arr = ['a', 'b', 'c', 'd'];
+
+        arr.forEach((val, key, arr) => {
+            //console.log(val);
+            console.log(arr);
+        });
+         */
+
+        //for...of   不能循环对象
+        let arr = ['1', 'b', 'c', 'd'];
+        /* for(let item of arr){
+            console.log(item);
+        } */
+        //for...of  keys()
+        /* for(let item of arr.keys()){
+            console.log(item);
+        } */
+
+        //every():返回一个Boolean,判断每个元素是否符合func(箭头函数)条件
+        /* let res = arr.every((val,key,arr) => {
+            console.log(key,val);
+            return val;
+        }) */
+
+        //some()返回一个Boolean判断是否有元素符合func条件,注:只要找到立即返回结果,不再查找
+        /* let res = arr.some((val,key,arr) => {
+            console.log(key,val);
+            return val;
+        }); */
+
+        //map():返回一个新的Array,每个元素为调用func的结果.通常使用的是map的结果.
+        let arr7 = [1,2,3,4,5,6,7,8];
+        /* 
+        let a = arr7.map((val,key,arr7) => {
+            console.log(val+10);
+        })
+
+        */
+        function foo(x){
+            return x*x;
+        }
+        function foo1(x){
+            return x+x;
+        }
+        let d =arr7.reduce(foo1);
+        let e = arr7.reduce((x,y)=>{
+            return x+y;
+        })
+        let b = arr7.map(foo);
+        let c = arr7.map(String);
+    </script>
+</body>
+
+</html>

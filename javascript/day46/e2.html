@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+        <li>05</li>
+    </ul>
+    <script>
+   function F(){
+        this.do=function(){
+            return "foo";
+        }
+   }
+    F.prototype=function(){
+        this.do=function(){
+            return "bar";
+        }
+    }
+    var x=new F().do();
+
+    </script>
+</body>
+</html>

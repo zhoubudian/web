@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /* let [a, b, c] = [8, 9, 10];
+      console.log(a, b, c); */
+
+      /* let [a, b, c, d] = [1, 2, [3, 4], 5];
+      console.log(a, b, c, d); */
+
+      /* let [a, b, [c], d] = [1, 2, [3, 4], 5];
+      console.log(a, b, c, d); */
+
+      /* let [a, b, [c, e=10], d] = [1, 2, [3, 4], 5];
+      console.log(a, b, c, d, e);
+
+      let [a, b, [c, e=10], d] = [1, 2, [3], 5];
+      console.log(a, b, c, d, e); */
+
+      function foo(){
+          return 123;
+      }
+
+      let [a=foo()] = [];//123
+    //   let [a=foo()] = [10];//10
+      console.log("a=>"+a);
+    </script>
+</body>
+</html>

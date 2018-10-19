@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="one">谁是我</div>
+
+    <script>
+        let oDiv = document.querySelector("#one");
+        /* oDiv.addEventListener("click",function () { 
+            console.log(this);
+            window.setTimeout(function () { 
+                console.log(this);
+             },1000);
+         }); */
+
+        /* oDiv.addEventListener("click",function () { 
+           console.log(this);
+           window.setTimeout(() => { 
+               console.log(this);
+            },1000);
+        }); */
+
+        /* oDiv.addEventListener("click",() => { 
+           console.log(this);
+           window.setTimeout(() => { 
+               console.log(this);
+            },1000);
+        }); */
+
+/***
+注意: 常规函数 与 箭头函数中this的区别
+1.常规函数: 有自己的this, this是谁(oDiv)调用我,我指向谁==>绑定:就是this是继承自父执行上下文！！中的this，
+2.箭头函数: 根本没有自己的this，导致内部的this就是外层代码块的this(即箭头函数与父级共用同一个this=>也就是父级的this)。正是因为它没有this，所以也就不能用作构造函数。
+
+***/
+
+        var a = 33;
+        let b = 44;
+        //console.log(window.a);
+        //console.log(window.b); //let定义的不是全局变量. 只有var可以定义全局变量.
+        console.log(b); //let块级作用域 
+
+        let obj = { //使用let创建一个全局对象
+        //在对象中健和值是平级关系   所以箭头
+            a: 666,
+            foo: function () { //正常函数
+                console.log(a);
+                console.log(b);
+                console.log(this.a);
+                console.log(this.b); //undefined:obj内部没有b
+                console.log(this); //this->obj
+            },
+            foo2: () => { //箭头函数指向定义时所在的对象
+                console.log(a);
+                console.log(b);
+                console.log(this.a); //this.a ==>window.a
+                console.log(this.b); //在全局window找不到b,反证let 块级作用域 
+                console.log(this); //this->window(obj在全局创建)
+            }
+
+        }
+
+        obj.foo();
+        console.log('===========================================');
+        obj.foo2();
+    </script>
+</body>
+
+</html>

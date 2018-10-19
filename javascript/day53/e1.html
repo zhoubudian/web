@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* let s = new Set([1,2,3,4,5,6,'6',1]);
+      console.log(s);
+      let sl = new Set([1,2,3,4,5,6,7,1,2]);
+      console.log(sl); */
+
+        //数组去重
+        /* let arr = [1,2,3,45,6,2,5,2,4,1,7];
+        let arr1 = [];
+        for(let item of arr){
+            if(!arr1.includes(item)){
+                arr1.push(item);
+            }
+        }
+        console.log(arr1); */
+
+        /* let s3 = new Set([1,111,1111,12345]);
+        s3.add(10);
+        s3.delete(1);
+        console.log(s3);
+        let h = s3.has(111);
+        console.log(h,s3.size); */
+
+        /* let w1 = new WeakSet();
+        let obj = {
+            name: "Amber",
+            age: 12
+        };
+        let obj1 = {
+            name: "zhao",
+            age: 17
+        };
+        w1.add(obj);
+        w1.add(obj1);
+        console.log(w1);
+
+        
+
+        let m = new Map();
+        m.set("city", "哈尔滨");
+        m.set("birdeg", "松浦大桥");
+        m.set(obj, 'hello');
+        m.set(obj1, {
+            a: 'a'
+        });
+
+        let g = m.get("city");
+        let g1 = m.get(obj);
+        let g2 = m.get(obj1);
+        console.log(m.size);
+        console.log(m);
+        console.log(g);
+        console.log(g1);
+        console.log(g2);
+
+        let wm = new WeakMap();
+        wm.set({
+            name: 'zhao'
+        }, "AK47");
+        console.log(wm); */
+
+        /*  var mb = new Map([
+             [1, 'x'],
+             [2, 'y'],
+             [3, 'z']
+         ]);
+         for (var x of mb) { // 遍历Map
+             console.log(x[0] + '=' + x[1]);
+         } */
+
+        /* var m = new Map([
+            [1, 'x'],
+            [2, 'y'],
+            [3, 'z']
+        ]);
+        m.forEach(function (value, key, map) {
+            console.log(value);
+        }); */
+        var ma = new Map([
+            ['Michael', 95],
+            ['Bob', 75],
+            ['Tracy', 85]
+        ]);
+        ma.get('Michael');
+    </script>
+</body>
+
+</html>

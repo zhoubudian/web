@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* let name = "zhao";
+        let age = 12;
+        let obj = {
+            name,
+            age
+        };
+        let obj1 = {
+            name,
+            [name]: "qian",
+            age
+        };
+        console.log(obj1);
+
+        function o(x) {
+            let obj2 = {
+                name:x
+            };
+            return obj2;
+        } */
+
+        let obj5 = {
+            name:"qw",
+            age:12
+        }
+        let obj6 = {
+            name:"qw",
+            age:12
+        }
+        let obj7 = obj5;
+        console.log(obj5 === obj7);
+        console.log(Object.is(obj5 , obj7));
+        console.log("======================");
+        console.log(obj5 === obj6);
+        console.log(Object.is(obj5 , obj6));
+
+    </script>
+</body>
+
+</html>

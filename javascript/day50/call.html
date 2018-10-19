@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     let obj = {
+         name:"最强兵王",
+         age: 12
+     }
+     function foo(name, age){
+            console.log(name);
+            console.log(age);
+            console.log(this);
+     }
+    //foo.call(this, "月亮", 12);
+    /* foo.call(this);
+    foo.call(obj);
+    foo.call(obj, "月亮", 12); */
+    foo.apply(obj,["大头儿子小头爸爸",5]);
+    foo.apply(obj,[obj.name,obj.age]);
+
+    foo.bind(obj)("大耳朵图图",10);
+    </script>
+</body>
+</html>

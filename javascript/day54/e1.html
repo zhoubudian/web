@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function loadImg(src, callback, fail){
+          var img = document.createElement("img");
+          img.onload = function(){
+              callback(img);
+            console.log(123,src);
+          }
+          img.onerror = function(){
+              fail();
+          }
+          img.src = src;
+       }
+
+       var src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539663160702&di=72abe4921ff47eb2bc82a1f1d25089ec&imgtype=0&src=http%3A%2F%2Fs9.knowsky.com%2Fsucai%2Fll%2F7%2F2013090611165151546.jpg';
+
+       loadImg(src,function(pic){
+           document.body.appendChild(pic);
+       },function(){
+           document.write("错误");
+       });
+    </script>
+</body>
+</html>

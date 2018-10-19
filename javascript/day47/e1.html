@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* let json = '{"name":"Amber","tall":178}';
+        let obj = JSON.parse(json);
+        let {name, tall} = obj;
+        let str = JSON.stringify(obj);
+        console.log(name, tall);
+        console.log(obj);
+        console.log(str); */
+
+        let {z} = {z:15};
+        /* 
+        等同
+        let obj = {
+            z:15
+        }
+        let {z} = obj;
+         */
+        console.log(z);
+
+        let c;
+        ({c} = {c:30});
+        console.log(c);
+    </script>
+</body>
+</html>

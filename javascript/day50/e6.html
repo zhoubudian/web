@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="one">谁是我</div>
+
+    <script>
+       'use strict'
+       /* var  a = 10;
+       console.log(a); */
+
+       /* function ba(){
+           console.log(this);
+       } */
+
+       /* function con(name,age){
+           this.name = name;
+           this.age = age;
+       }
+       let c = new con(); */
+
+       var ccc = 20;
+       var obj = {
+           ccc:30
+       }
+
+       with(obj){
+            console.log(ccc);
+       }
+    </script>
+</body>
+
+</html>
