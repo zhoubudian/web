@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click='add()'>提交</button>
+        <ul>
+            <li v-for='name in mess' v-text='name'></li>
+        </ul>
+    </div>
+    <script>
+       new Vue({
+               el:'#app',
+               data:{
+                   mess:['cat','dog','pig'],
+               },
+               methods:{
+                    add(){
+                        alert();
+                        console.log(this.mess);
+                        this.mess.push('pandan');
+                    },
+               },
+           });
+    </script>
+</body>
+</html>

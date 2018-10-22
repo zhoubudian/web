@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span v-bind:title='mess'>
+            鼠标悬停几秒查看此处动态
+        </span>
+    </div>
+
+    <div id="app-1">
+        <ul>
+            <li v-for="key in todos">
+                {{key.text}}
+            </li>
+        </ul>
+    </div>
+
+    <div id="app-2">
+        <p>{{mess}}</p>
+        <button v-on:click='rever'>逆转信息</button>
+    </div>
+
+    <script>
+        var app3 = new Vue({
+            el:'#app-2',
+            data:{
+                mess:'Hello Vue.js!',
+            },
+            methods:{
+                rever:function(){//在methods中经常使用到“this”关键字，该关键字指向Vue组件实例
+                    this.mess=this.mess.split('').reverse().join('');
+                }
+            }
+        });
+
+        
+        var app2 = new Vue({
+            el: '#app',
+            data: {
+                mess: '页面加载于 ' + new Date().toLocaleString()
+            }
+        })
+
+        var app1=new Vue({
+            el:'#app-1',
+            data:{
+                todos:[
+                    {text:'学习javascript'},
+                    {text:'学习vue'},
+                    {text:'大牛'},
+                ]
+            }
+        });
+    </script>
+</body>
+
+</html>

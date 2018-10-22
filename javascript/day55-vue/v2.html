@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if='isLogin'>{{msg}}</div>
+        <div v-else>错误</div>
+
+        <div v-if="  type == 'z' ">A</div>
+        <div v-else-if="  type == 'zz' ">B</div>
+        <div v-else>C</div>
+        <div v-show='isShow'>aaa</div>
+    </div>
+
+    <script>
+       new Vue({
+           el:'#app',
+           data:{
+               msg:'将来的你一定会感谢现在的自己',
+               //isLogin:false,
+               isLogin:true,
+               type:'zz',
+               isShow:false
+           }
+       });
+       console.log(this.isLogin);
+    </script>
+</body>
+</html>

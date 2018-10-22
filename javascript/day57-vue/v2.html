@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click='add(10,$event)'>加法</button>
+        <div>{{count}}</div>
+        <input type="text" @keyup='show' v-model='count'/>{{num}}
+        <input type="text" @keydown.enter='dis' v-model='msg' />
+        <br />
+        <div v-on='{mousedown:isThat,mouseup:isThis}'>点击</div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+     new Vue({
+        el:'#app',
+        data:{
+            count:0,
+            msg:'输入后,敲回车',
+            num:10,
+        },
+        methods:{
+            add(num,e){
+                this.count += num;
+                console.log(e);
+            },
+            dis(){
+                alert('你按了回车键');
+            },
+            show(){
+                this.num += parseInt(this.count);
+                console.log(this.num);
+            },
+            isThat(){
+                console.log('鼠标按下');
+            },
+            isThis(){
+                console.log('鼠标抬起');
+            },
+        },
+     });
+    </script>
+</body>
+</html>

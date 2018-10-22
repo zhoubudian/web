@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <div v-for='val in sname'>
+            {{val}}
+        </div> -->
+        <div v-for='(val,index) in sname' :key='index'>
+            {{index}} -- {{val}}
+        </div>
+
+        <div v-for='(val,key,index) in obj' :key='index'>
+            {{key}}=={{val}}=={{index}}
+        </div>
+
+        <ul>
+            <li v-for='(val,key,index) in user' :key='index'>
+                {{val.name}}-{{val.age}}-{{val.tel}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                sname: ['大庆师范', '黑建筑', '哈信息', '长春财经', ],
+                obj: {
+                    name: 'Amber',
+                    age: 12,
+                    tel: 123456789,
+                },
+                user: [{
+                        name: '赵',
+                        age: 12,
+                        tel: 123456789,
+                    },
+                    {
+                        name: '钱',
+                        age: 12,
+                        tel: 123456789,
+                    },
+                    {
+                        name: '孙',
+                        age: 12,
+                        tel: 123456789,
+                    },
+                    {
+                        name: '李',
+                        age: 12,
+                        tel: 123456789,
+                    },
+                ]
+            }
+        });
+    </script>
+</body>
+
+</html>
