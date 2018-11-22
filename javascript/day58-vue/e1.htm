@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+       width: 100px;
+       height:100px;
+       border:20px ridge #0ff;
+    }
+    .ccc{
+        font-size: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <img v-bind:src="imgSrc" v-bind:alt="imgAlt">
+       <div v-bind:class='uClass'>v-bind</div>
+       <div v-bind:class='{box:isA}'></div>
+       <div v-bind:class='{box:isA,ccc:isB}'>v-bind</div>
+       <div v-bind:style='sbox'>v-bind</div>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+     new Vue({
+         el:'#app',
+         data:{
+            imgSrc:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540266905021&di=14af64aa939f68300f868321ec80d6d5&imgtype=0&src=http%3A%2F%2Fimage.bitautoimg.com%2Fappimage%2Fmedia%2F20161115%2Fw552_h379_f2334518ae7944478e51cc79cf09b8a7.jpeg',
+            imgAlt:'布加迪威龙',
+            uClass:'box',
+            isA:true,
+            isB:true,
+            sbox:{
+                width:'100px',
+                height:'30px',
+                'background-color':'#0ff',
+            },
+         }
+     });
+    </script>
+
+    
+</body>
+</html>

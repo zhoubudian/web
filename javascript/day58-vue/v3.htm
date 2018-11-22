@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <script src="js/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-ccc>vue-directive</h2>
+        <h2 v-ccc='aa'>vue-directive</h2>
+    </div>
+
+    <script>
+        /**
+1.hook钩子函数: 指做某件事之前/之后, 要让VUE自动去做什么事.也就是钩子函数是自动执行的.***
+2.vnode: 虚拟节点(即虚拟DOM, 存于内存之中, 而JS是真实DOM存于文件中,如:getElmentByID等.
+3.虚拟DOM原理：
+ vue通过数据结构在内存中形成虚拟DOM树,当数据发生改变时,先将当前的虚拟DOM与上一次的虚拟DOM进行比较,然后将不同的地方同步到真实DOM上进行相应更新(局部),而不是刷新整个DOM树．因此虚拟DOM性能更高
+)
+虚拟DOM: 在SPA(single page application)单页面,虚拟DOM表现极好. 但静态页面应用上,虚拟DOM极耗内存(因为每个页面都要在内存中打开二个虚拟DOM).
+*/
+
+        /* Vue.directive('ccc',function(el,binding,vnode){
+            console.log(el);//绑定元素
+            console.log(binding);
+            console.log(vnode);
+            el.style.background = binding.value;
+        }); */
+        //例3: 指令定义的完整写法,包含了几个钩子函数. 见下面的注释
+        //1.hook钩子函数: 指做某件事之前/之后, 要让VUE自动去做什么事.也就是钩子函数是自动执行的
+
+        Vue.directive('ccc',{
+            bind(el, binding, vnode) {
+                console.log('bind');
+                el.style.background = binding.value;
+            },
+            inserted() {
+                console.log('inserted');
+            },
+            update() {
+                console.log('update');
+            },
+            componentUpdated() {
+                console.log('componentUpdated');
+            },
+            unbind() {
+                console.log('unbind');
+            },
+
+        });
+        new Vue({
+            el: '#app',
+            data: {
+                aa: '#0ff',
+            },
+            methods: {
+
+            },
+        });
+    </script>
+
+
+</body>
+
+</html>
