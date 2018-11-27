@@ -1,0 +1,39 @@
+{
+  "musicData": [{
+    "title": "Html5游戏值神经猫",
+    "author": "老狼",
+    "src": "http://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLDWzBox5CNaAV7h7mlnCn10w0iaBnquzFDMasEVQJVC2wSf4slpMHibcS2nRibcDdenB0/356?tp=webp356&tp=webp",
+    "musicImgSrc": "../img/20181119215506.jpg",
+    "lrc": "https://api.bzqll.com/music/netease/lrc?key=579621905&id=526307800"
+  }, {
+    "title": "Web前端开发之JavaScript精英课堂",
+    "author": "赵雷",
+    "src": "http://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLBsSud06XlZnJACsTWd7OSA5phIFPRTNibFBeuT8jRjy00Jb5ticSEKYUnpUYdBCicH2U/356?tp=webp356&tp=webp",
+    "musicImgSrc": "../img/20181119215525.jpg",
+    "lrc": "https://api.bzqll.com/music/netease/lrc?key=579621905&id=526307800"
+  }, {
+    "title": "Vue2.0小白入门教程",
+    "author": "陶喆",
+    "src": "http://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLCCUuNw1683bOFqRsGSBfLZ81ntG4swhBIOVtX0JkFSzP6CqlphYLYrphaU0vkQ1Lo/356?tp=webp356&tp=webp",
+    "musicImgSrc": "../img/20181119215546.jpg",
+    "lrc": "https://api.bzqll.com/music/netease/lrc?key=579621905&id=526307800"
+  }, {
+    "title": "原生JS贪吃蛇游戏实战开发",
+    "author": "李健",
+    "src": "https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLCfsOGnxjhUXFA6SHMOu0fMUicuucRlIVNo9zBnnLiacovMnePD6586QlRj2qvwudbn8/356?tp=webp356&tp=webp",
+    "musicImgSrc": "../img/20181119215613.jpg",
+    "lrc": "https://api.bzqll.com/music/netease/lrc?key=579621905&id=526307800"
+  }, {
+    "title": "技术专家角度看互联网猎头",
+    "author": "陈奕迅",
+    "src": "http://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLBLKHPic9oz3eEHLB805j5TXVGicDUvqJQbvCgdpvicbV65fVpnKbNQCWPl2LJUbPCmvI/356?tp=webp356&tp=webp",
+    "musicImgSrc": "../img/20181119215633.jpg",
+    "lrc": "https://api.bzqll.com/music/netease/lrc?key=579621905&id=526307800"
+  }, {
+    "title": "零基础WEB前端入门",
+    "author": "李玉刚",
+    "src": "https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLCRlDgtxVbmyclxP9fDUYmnuqAFbN5mYsncrPrVyQbtA3fNfuZ3qicSe1r7Ppt7tICs/356?tp=webp356&tp=webp",
+    "musicImgSrc": "../img/20181119215648.jpg",
+    "lrc": "https://api.bzqll.com/music/netease/lrc?key=579621905&id=526307800"
+  }]
+}
